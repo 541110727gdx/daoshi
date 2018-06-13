@@ -1,0 +1,42 @@
+<!--pages/yiDian/yiDian.wxml-->
+<!--pages/detailTea/detailTea.wxml-->
+<!--学员视频  -->
+<audio class="audio3" style="text-align: left" poster="{{msg.head_img_url}}" src="{{msg.video_url}}" name="" author="{{msg.username}}" controls hidden='{{msg.type == 1?false : true}}'></audio> 
+<video custom-cache="{{false}}" src="{{msg.video_url}}" hidden='{{msg.type == 1?true:false}}'></video>
+<!-- 学员信息 -->
+<view class="{{msg.type == 1? 'stu-msg':'stu-msg2'}}">
+  <view>
+    <text>{{msg.username}}</text>
+    <text class="play-num"></text>
+  </view>
+  <view>
+    <text>男</text>
+    <text>{{msg.age}}</text>岁
+    <text>{{array[msg.city]}}</text>
+  </view>
+  <view>{{msg.jop}}</view>
+  <view>
+    <text style='margin-right:20rpx'>{{msg.mentality}}</text>
+    <text>{{msg.ideality}}</text>
+  </view>
+</view>
+<!--点评视频  -->
+<view class="title-dian" hidden='{{stuHidden}}'>
+  导师寄语
+</view>
+<block wx:for-items="{{teaArr}}" wx:for-item="tea">
+  <video poster='{{tea.video_img}}' hidden='{{stuHidden}}' src="{{tea.video_url}}"></video>
+  <view class="con-wu"  hidden='{{stuHidden}}'>
+    <view class="start-ping"  hidden='{{stuHidden}}'>
+      <text>导师评分</text>
+       <view class="start"> 
+        <icon class="{{msg.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+        <icon class="{{msg.standard >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+        <icon class="{{msg.standard >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+        <icon class="{{msg.standard >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+        <icon class="{{msg.standard >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+      </view>
+    </view>
+  </view>
+</block>
+

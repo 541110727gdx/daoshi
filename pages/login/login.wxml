@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <!-- <view class="user">
+    <view  bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+  </view> -->
+  <!-- <view class="username">{{userInfo.nickName}}</view> -->
+  <view class="phone">
+    <input placeholder-class="psection" placeholder-style="color:#d7d7d7" placeholder="请输入手机号" type="number" name="phone" bindinput="phoneInput" maxlength="11" value="{{phone}}"/>
+  </view>
+  <view class="password">
+    <input placeholder-class="psection" placeholder-style="color:#d7d7d7" placeholder="请输入密码" type="password" bindinput="passInput" value="{{password}}"/>
+  </view>
+  <button class="login" bindtap="login">登录</button>
+  <view class="goRegister">
+    <text bindtap='goRegister'>去注册</text>
+    <text style='margin-right:20px' bindtap='goFind'>找回密码</text>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">登陆中...</loading>

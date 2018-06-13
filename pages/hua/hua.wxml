@@ -1,0 +1,7 @@
+<!--pages/hua/hua.wxml-->
+<video custom-cache="{{false}}" poster='{{hua[0].video_img}}' src="{{hua[0].video_url}}" hidden='{{msg.type == 1?true:false}}' direction=''></video>
+<view class="{{msg.type == 1? 'stu-msg':'stu-msg2'}}">
+  <view style='text-align:center'>
+    <text class="name">巫启贤</text>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+/* pages/success/success.wxss */
+page{
+  width: 100%;
+  height: 820px;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/kY6*iN0kgcqaFIqGW4b0XlIsFbCmB6PCEzaVOODdUGI!/m/dPcAAAAAAAAAnull&bo=gAIMBgAAAAARB7g!&rf=photolist&t=5);
+  overflow: hidden;
+}
+view{
+  width: 70%;
+  height: 250rpx;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  color:#686868;
+  margin-top:20%;
+  padding:50rpx;
+}
+button{
+  text-align: center;
+  display: block;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 16px;
+  margin-top: 25rpx;
+  background: #383838;
+  color:#fff;
+  border-radius: 5px;
+  border: none;
+}
+button:hover{
+  background: #383838;
+  color:#fff;
+}

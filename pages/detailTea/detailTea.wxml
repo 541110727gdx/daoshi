@@ -1,0 +1,72 @@
+<!--pages/detailTea/detailTea.wxml-->
+<!--学员视频  -->
+<audio class="audio3" style="text-align: left" poster="{{msg.head_img_url}}" src="{{msg.video_url}}" name="" author="{{msg.username}}" controls hidden='{{msg.type == 1?false : true}}'></audio> 
+<video custom-cache="{{false}}" src="{{msg.video_url}}" hidden='{{msg.type == 1?true:false}}'></video>
+<!-- 学员信息 -->
+<view class="{{msg.type == 1? 'stu-msg':'stu-msg2'}}">
+  <view>
+    <text>{{msg.username}}</text>
+    <text class="play-num"></text>
+  </view>
+  <view>
+    <text>男</text>
+    <text>{{msg.age}}</text>岁
+    <text>{{array[msg.city]}}</text>
+  </view>
+  <view>{{msg.jop}}</view>
+  <view>
+    <text style='margin-right:20rpx'>{{msg.mentality}}</text>
+    <text>{{msg.ideality}}</text>
+  </view>
+</view>
+<view class="huifu" hidden="{{msg.requirement == 1? false:true}}">该作品需要导师视频回复</view>
+<view class="huifu" hidden="{{msg.requirement == 1? true:false}}">该作品需要导师音频回复</view>
+<!--上传作品  -->
+<view class="add">
+  <view class="add-work">
+    添加点评
+  </view>
+  
+  <image hidden='{{imageHidden}}' catchtap='showVideo' class="videoImage" src='{{videoImage}}'></image>
+    <view hidden='{{videoHidden}}' class='videoView'>
+      <view class="closeVIdeo" catchtap='closeVideo'></view>
+      <video src='{{videoUrl}}'></video>
+      <button catchtap='delVideo'>删除该视频重新上传</button>
+    </view>
+    <view class="add-w" catchtap='showZz' hidden='{{wHidden}}'></view>
+     <audio class="audio2" style="text-align: left" poster="{{userImg}}" src="{{yinUrl}}" name="" author="{{userName}}" controls hidden='{{audioHidden2}}'></audio> 
+</view>
+<!--导师评分  -->
+<view class="start-ping">
+    <text>导师评分</text>
+    <view class="start" bindtap='chooseicon'>
+      <icon class="{{tabArr.curHdIndex >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+      <icon class="{{tabArr.curHdIndex >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+      <icon class="{{tabArr.curHdIndex >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+      <icon class="{{tabArr.curHdIndex >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+      <icon class="{{tabArr.curHdIndex >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+    </view>
+</view>
+
+<button bindtap='submit'>提交</button>
+<loading hidden="{{loadingHidden}}">请稍后...</loading>
+
+<!--选择视频音频遮罩层  -->
+<view class="zz {{showView? 'zz-show' : 'zz-hide'}}">
+  <view class="zz-btn">
+     <view catchtap='showYin'></view> 
+    <!-- <view></view> -->
+    <view catchtap='chooseVideo'></view>
+    <view catchtap='hideZz'></view>
+  </view>
+</view>
+<!--音频遮罩层  -->
+<view class="yinpin" hidden='{{yinpinHidden}}'>
+  <audio style="text-align: left" poster="{{userImg}}" src="{{yinUrl}}" name="" author="{{userName}}" controls hidden='{{audioHidden}}'></audio> 
+  <image catchtap="startLu" src='../../img/luyin.png' hidden='{{luImgHidden}}'></image>
+  <image class="gif" src='../../img/gif.gif' hidden='{{gifHidden}}'></image>
+  <view class="yin-done" catchtap='yinDone' hidden='{{doneHidden}}'>完成</view>
+  <view class="yin-again" hidden='{{againHidden}}' catchtap='again'>重录</view>
+  <view class="yin-finish" hidden='{{againHidden}}' catchtap='useYin'>使用</view>
+</view>
+<loading hidden="{{loadingHidden}}">请稍后...</loading>

@@ -1,0 +1,116 @@
+/* pages/homeTea/homeTea.wxss */
+page{
+  width: 100%;
+  /* height: 820px; */
+}
+.body{
+  position: relative;
+}
+.nav{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  line-height: 80rpx;
+  justify-content:space-around;
+  color: #999;
+  border-bottom: 1px solid #ccc;
+}
+.act{
+  color:#000;
+  border-bottom: 1px solid #000;
+}
+.hidden{
+  display: none;
+}
+.act{
+  color:#000;
+  border-bottom: 1px solid #000;
+}
+.qi-num{
+  width: 670rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 40rpx;
+  color:#111;
+  font-size: 18px;
+}
+.film-item{
+  width: 315rpx;
+  height: 290rpx;
+  /* float: left; */
+  display: inline-block;
+  position: relative;
+  margin-left:40rpx;
+  margin-bottom: 20rpx;
+}
+.film-image{
+  width: 100%;
+  height: 184rpx;
+  float: left;
+  position: relative;
+  background: #000;
+}
+.film-yin{
+   background:#fff;
+  width: 100%;
+  height: 184rpx;
+  float: left;
+  position: relative;
+}
+.film-image text,.film-yin text{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  width: 70rpx;
+  height: 40rpx;
+  color:#fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 5px;
+}
+.film-image image,.film-yin image{
+  
+  border-radius: 5px;
+}
+.film-image .img-play,.film-yin .img-play{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-30rpx;
+  margin-top:-30rpx;
+}
+.film-image image,.film-yin image{
+  width: 100%;
+  height: 100%;
+}
+.film-info{
+  width: 100%;
+  height: 106rpx;
+  float:right;
+}
+.film-msg{
+  height: 44rpx;
+  margin-top:15rpx;
+}
+.film-name{
+    margin: 10rpx 0;
+    font-size: 16px;
+    color:#353535;
+}
+.film-num{
+  font-size: 15px;
+  color:#ff6767;
+  font-weight: bolder;
+}
+.film-image .shiImg,.film-yin .shiImg{
+  margin: 0 20%;
+  width: 60%;
+  height: 100%;
+  border-radius: 0px;
+}

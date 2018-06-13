@@ -1,0 +1,305 @@
+/* pages/baoming/baoming.wxss */
+.body{
+  width: 100%;
+  height: 2000rpx;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/7LcQKXJAplijw6ZsOTtYX1QDjdCG6PHINXDkZrGjJ7k!/m/dPcAAAAAAAAAnull&bo=gAIMBgAAAAARB7g!&rf=photolist&t=5) no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden
+}
+.body-con{
+  width: 626rpx;
+  height: 1900rpx;
+  margin: 20px auto 0;
+  padding: 0 42rpx 0;
+  background: #fff;
+  border-radius: 10px;
+}
+.con-view{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: relative;
+  border-bottom: 1px solid #e9e9e9;
+  font-size: 14px;
+  color:#606060;
+}
+.con-idea{
+  width: 100%;
+  min-height: 420rpx;
+  line-height: 90rpx;
+  position: relative;
+  /* border-bottom: 1px solid #e9e9e9; */
+  font-size: 14px;
+  color:#606060;
+}
+.con-idea2{
+  min-height: 450rpx;
+  width: 100%;
+  line-height: 90rpx;
+  position: relative;
+  /* border-bottom: 1px solid #e9e9e9; */
+  font-size: 14px;
+  color:#606060;
+}
+.con-view input{
+  width: 400rpx;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 36%;
+  margin-left:-100rpx;
+  text-align: center;
+}
+.group{
+  display: inline-block;
+  width: 400rpx;
+  position: absolute;
+  top:0;
+  left:52%;
+  margin-left:-120rpx;
+}
+.group view{
+  display: inline-block;
+  margin-right: 20px;
+  float: left;
+  color:#000;
+}
+.group view radio{
+  float: left;
+}
+.group view image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top:26rpx;
+  display: block;
+  float: left;
+}
+.group-idea{
+  width: 100%;
+  min-height: 80rpx;
+}
+.group-idea2{
+  width: 100%;
+  min-height: 150rpx;
+}
+.group-idea view,.group-idea2 view{
+  display: inline;
+  margin:0 10rpx;
+  font-size: 25rpx;
+}
+.txa1,.txa2{
+  width: 96%;
+  height: 90rpx;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding:2%;
+  line-height: 40rpx;
+}
+.add-work{
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left:60rpx;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/4AdFB*q7m.xIGmMVBz769PlzZjKBghWWydmDsKMVQbw!/m/dPcAAAAAAAAAnull&bo=LAAiAAAAAAADByw!&rf=photolist&t=5) left center no-repeat;
+  background-size: 50rpx 40rpx;
+}
+.add-work text {
+  font-size: 14px
+}
+.videoImage{
+  width: 162rpx;
+  height: 162rpx;
+}
+.videoView{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  top:0;
+  left:0;
+  z-index: 999;
+}
+.videoView video{
+  position: absolute;
+  bottom: 40%;
+  left:50%;
+  margin-left:-250rpx;
+}
+.videoView button{
+  width: 400rpx;
+  position: fixed;
+  bottom: 20%;
+  left:50%;
+  margin-left:-200rpx;
+}
+.closeVIdeo{
+  width: 70rpx;
+  height: 70rpx;
+  position: fixed;
+  top:10%;
+  right: 10%;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/2DpMQmWEnWP30Loy2w*gDrNZvLkNekuWWlmvEMwY6Ng!/m/dPkAAAAAAAAAnull&bo=IwAjAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
+  background-size: 80% 80%;
+}
+.add-w{
+  width: 162rpx;
+  height: 162rpx;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/M.8ahKv3IE9P3*ZC6eezRtu8qS30*YXM96WuIZw5moc!/m/dB4BAAAAAAAAnull&bo=ogCiAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
+  background-size: 100% 100%;
+}
+.gongkai{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color:#606060;
+}
+.gongkai switch{
+  float: right;
+}
+button{
+  width: 100%;
+  height: 90rpx;
+  background: #202020;
+  border-radius: 5px;
+  margin-top:20rpx;
+  color:#fff;
+}
+picker{
+  width: 348rpx;
+  float: right;
+}
+.button-hover {
+  color:#fff;
+  background-color:#202020;
+}
+.zz{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  top:0;
+  left:0;
+  z-index: 999;
+}
+.zz-btn{
+  width: 100%;
+  height: 300px;
+  position: fixed;
+  left:0;
+  bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.zz-btn view:nth-child(1) {
+  width: 150rpx;
+  height: 190rpx;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/FfbMZxzDRa6wwZO1ndHrGVJc0K4nlaaP68kMbxD5.6g!/m/dB4BAAAAAAAAnull&bo=ogDMAAAAAAADB0w!&rf=photolist&t=5) center center no-repeat;
+  background-size: 100% 100%;
+}
+.zz-btn view:nth-child(2) {
+  width: 150rpx;
+  height: 190rpx;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/VP8EUwxNB64sDI0pMKIvB1zWI38h8zsYKQpJfbzMAos!/m/dAEBAAAAAAAAnull&bo=ogDMAAAAAAADB0w!&rf=photolist&t=5) center center no-repeat;
+  background-size: 100% 100%;
+}
+.zz-btn view:nth-child(3) {
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  left:50%;
+  margin-left:-19rpx;
+  bottom:50px;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/pXvfMxnqTkfRdIXBJG7YDGXWHzNcCQ1YEs6UFAcc6aw!/m/dB4BAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5);
+  z-index:9999;
+  background-size: 100% 100%;
+}
+.zz-show{
+  display: block;
+}
+.zz-hide{
+  display: none;
+}
+
+video{
+  width: 500rpx;
+  height: 500rpx;
+}
+.yinpin{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  background: #f2f3f8;
+  z-index: 9999;
+}
+.yinpin image{
+  position: absolute;
+  bottom: 15%;
+  left:50%;
+  width: 150rpx;
+  height: 150rpx;
+  margin-left:-75rpx;
+}
+.yinpin .gif{
+  width: 200rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 15%;
+  left:50%;
+  margin-left:-100rpx;
+}
+.yinpin audio{
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-304rpx;
+  text-align: left;
+  background: #f2f3f8;
+}
+.audio2{
+  /* position: absolute;
+  bottom:-30%;
+  left:50%;
+  margin-left:-304rpx;
+  text-align: left; */
+}
+.yinpin .yin-done{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 6%;
+}
+.yin-again{
+  width: 176rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  position: absolute;
+  bottom: 4%;
+  left:3%;
+  border:1px solid #ccd0da;
+  font-size: 16px;
+  color:#929292;
+  text-align: center;
+  border-radius: 50px;
+}
+.yin-finish{
+  width: 176rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  position: absolute;
+  bottom: 4%;
+  right:3%;
+  border:1px solid #383838;
+  font-size: 16px;
+  color:#383838;
+  text-align: center;
+  border-radius: 50px;
+}
+.gong_text{
+  color: red;
+  font-size: 16px;
+  margin-left: 240rpx;
+}

@@ -1,0 +1,110 @@
+<!--pages/guize/guize.wxml-->
+<view class="body">
+  <!-- <image src="../../img/banner2.jpg"></image> -->
+   <view class="nav bc_white">
+    <view class="{{selected?'act':''}}" bindtap="selected">定价报名</view>
+    <view class="{{selected1?'act':''}}" bindtap="selected1">竞价报名</view>
+  </view>  
+  <view class="con">
+     <!-- <view style='font-size:20px'>{{msgg}}</view>  s -->
+    <view class="{{selected?'about':'hidden'}}">
+      <view class="title" >
+        报名规则：
+      </view>
+      <view>1、每期有30位幸运观众可免费获得导师点评；</view>
+      <view>2、没有获得幸运观众的小伙伴不要灰心，可竞价获得导师点评；</view>
+      <view>3、上交作品需要包括报名表、分镜头、作品源文件、时长不少于1分钟的视频成片</view>
+      <view>4、作品禁止抄袭盗用，如果使用素材、须用文档注明引用地址。</view>
+      <view>5、请认真填写详细资料方便导师对您的音乐方向点评不少于60秒的点评内容</view>
+      <view class="huifu">
+        <view class="huifu-title">
+          导师回复：
+        </view>
+        <view class="huifu1">
+          <view class="huifu-shi {{act?'huifu-act':''}}" bindtap='act'>
+            视频回复
+          </view>
+          <view class="huifu-yin {{act1?'huifu-act':''}}" bindtap='act1'>
+            音频回复
+          </view>
+        </view>
+      </view>
+      <view class="money">￥
+        <text>0.01</text>
+      </view>
+      <view class="pay" catchtap="payMoney1" hidden='{{payHidden}}'>支付
+        <text>0.01</text>元
+      </view>
+      <view class="pay2" hidden='{{pay2Hidden}}'>
+        <text>{{moneyList.pay_amount}}</text>
+      </view>
+    </view>
+    <view class="{{selected1?'about':'hidden'}}">
+      
+       <view class="top10">
+        TOP榜：
+      </view> 
+        <view class="table">
+          <view class="tr">
+              <view class="th" style="width:29%">排名</view>
+              <view class="th" style="width:29%">姓名</view>
+              <view class="th" style="width:42%">竞价金额（元）</view>
+          </view>
+          <block wx:for="{{top}}" wx:key="{{code}}">
+            <view class="tr bg-g">
+              <view class="td" style="width:29%">{{index+1}}</view>
+              <view class="td" style="width:29%">{{item.username}}</view>
+              <view class="td" style="width:42%">{{item.money}}</view>
+            </view>
+          </block>
+      </view>
+      <view class="goguize" bindtap='jing'>
+         竞价规则
+      </view>
+      <!--竞价  -->
+      <view style='line-height:20px;color:#000;padding-left:10px;'>
+        本次竞价起始金额：￥<text style='color:red;font-size:20px'>{{moneyList.compete_money}}</text>
+      </view>
+      <view bindtap='validMoney' style="color:#000;padding-left:10px;">
+        每次加价必须为<text style='color:red;font-size:20px'>{{moneyList.parameter}}</text>的整数倍
+      </view>
+       <view class="pay-money">
+        <view>
+          <input type='number' bindinput='inputMoney' value="" placeholder='请输入您的价格' placeholder-style='color:red;font-size:14px;'></input>
+        </view>
+        </view> 
+       <view class="pay" catchtap="payMoney2">
+        确认支付
+      </view> 
+    </view>
+  </view>
+  <!--  <view class="timeZz" hidden='{{timeHiden}}'> 
+    <view class="time-view">
+      <view>倒计时</view>
+      <view>{{clock}}</view>
+    </view>
+    <view>请在</view>
+    <view>{{endClock}}</view>
+    <view>之前填写报名信息</view>
+  </view>  -->
+  <!--竞价规则  -->
+  <view class="jing-zz" hidden='{{jingZz}}'></view>
+  <view class="jing-gui" hidden='{{jing}}'>
+    <view class="jing-title" >
+        报名规则
+    </view>
+    <scroll-view class="jing-msg" scroll-y="true">
+      <view>1、报名用户需实名制注册，或通过第三方认证直接注册；</view>
+      <view>2、报名时间：每周二、周四、7点至次日7点时间位24小时；</view>
+      <view>3、每期20名幸运用户可通过支付点评费用方式（仅支持微信支付哦！支付到帐后会提示上传点评作品页面；）获得导师点评，名额满20名自动关闭报名通道：</view>
+      <view>4、平台已开放竞价点评通道，点评名额每期会额外增加10位，参与竞价的用户，竞价通道不设封顶，每次竞价不少于起家的50%；</view>
+      <view>5、获得付费点评及竞价点评机会的小伙伴可登录用户端页面上传自己的音、视频作品；</view>
+      <view>6、作品上传不要超过20MB；</view>
+      <view>7、根据中华人民共和国工信部、国家信息产业部、及中国互联网信息中心CNNIC对互联网内容审核几管理处罚调理中明令禁止的所有言论及内容不得上传至本平台，已经发现将予以举报相关司法部门进行调查；</view>
+      <view>8、没有成功晋级付费及竞价点评的用户，72小时内将款项退还至支付用账户内；</view> 
+    </scroll-view>
+     <view class="know" bindtap='know'>知道了</view>
+  </view>
+
+</view>
+ <loading hidden="{{loadingHidden}}">请稍后...</loading>

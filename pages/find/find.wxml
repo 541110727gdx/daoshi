@@ -1,0 +1,19 @@
+<!--pages/find/find.wxml-->
+<view class="container">
+  <view class="phone">
+    <input placeholder-class="psection" placeholder-style="color:#d7d7d7" placeholder="请输入手机号" type="number" name="phone" bindinput="phoneInput" maxlength="11" value="{{phone}}"/>
+  </view>
+  <view class="code">
+    <view class="code1">
+      <input placeholder-class="psection" placeholder-style="color:#d7d7d7" placeholder="请输入验证码" type="number" bindinput="codeInput" value="{{code}}"/>
+    </view>
+    <button bindtap="getCode" disabled="{{isdisable}}">{{btnInfo}}</button>
+  </view>
+  <view class="password">
+    <input placeholder-class="psection" placeholder-style="color:#d7d7d7" placeholder="输入6-12位新密码" type="password" bindinput="passInput" value="{{password}}"/>
+  </view>
+  <view class="password">
+    <input placeholder-class="psection" placeholder-style="color:#d7d7d7" placeholder="再次输入密码" type="password" bindinput="passInput2" value="{{password2}}"/>
+  </view>
+  <button class="login" bindtap="bindNum">确认</button>
+</view>

@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="container">
+  <image class="banner" src="../../img/banner.jpg" bindtap='join'></image>
+  
+  
+  <!-- <block wx:if="{{showLoading}}">
+    <view class="page-loading">
+      <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+    </view>
+  </block> -->
+  <!-- <block wx:if="{{showLoading}}"> -->
+    <scroll-view style="height: 800rpx" scroll-y="true" class="container film-list" bindscroll="">
+    <view class="hua">
+      <view class="qi-num">导师花絮</view>
+      <view class="hua-view">
+        <view class="hua-view2">
+          <image class="hua-img" src="{{hua[0].video_img}}" bindtap='goHua'></image>
+        </view>
+      </view>
+    </view>
+      <block wx:for-items="{{film}}" wx:for-item="film" wx:for-index="index">
+        <view class="qi-num">{{film[1]}}期</view>
+          <block wx:for-items="{{film[2]}}" wx:for-item="msg" >
+            <view class="film-item" bindtap="goDetail" data-uid="{{msg.id}}"  data-vid="{{msg.video[0].id}}" data-title="{{msg.title}}">
+              <view class="{{msg.type == 1? 'film-yin':'film-image'}}">
+                <image class="shiImg" src="{{msg.video_img}}" hidden="{{msg.type == 1? true:false}}"></image>
+                <image class="yinImg" src="../../img/yin.png" hidden="{{msg.type == 1? false:true}}"></image> 
+                 <text hidden="{{msg.video[0].master_id == 0? false:true}}">未点评</text> 
+                <view class="start" hidden="{{msg.video[0].master_id == 0? true:false}}"> 
+                  <icon class="{{msg.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+                  <icon class="{{msg.standard >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+                  <icon class="{{msg.standard >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+                  <icon class="{{msg.standard >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+                  <icon class="{{msg.standard >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+                </view>
+              </view>
+              <view class="film-info">
+                <view>
+                  <view class="film-name">{{msg.username}}</view>
+                </view>
+                <view>
+                  <text class="ifyin" wx:if="{{msg.type == 1}}">音频</text>
+                  <text class='ifyin' wx:else>视频</text>
+                   <text class="film-num">播放量：{{msg.play_number}}</text>
+                </view>
+              </view> 
+            </view>
+          </block>
+      </block>
+    </scroll-view>
+      <!-- <view class="load-more-wrap">
+          <block wx:if="{{hasMore}}">
+            <block wx:if="{{loadMoreLoading}}">
+              <view class="load-content">
+                <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="btn-load-more" bindtap="loadMore">
+                <text>点击加载更多</text>
+              </view>
+             </block> 
+          </block>
+          <block wx:else>
+            <view class="load-content">
+              <text>没有更多内容了</text>
+            </view>
+          </block>
+        </view> -->
+    
+  <!-- </block> -->
+<!--tab  -->
+  <view class="tab">
+    <view class="tab-view1">
+      <image src="../../img/index-act.png"></image>
+      <view class="index-view">首页</view>
+    </view>
+    <view class="tab-view2" bindtap='goMy'>
+      <image src="../../img/my.png"></image>
+      <view class="my-view">我的</view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">请稍后...</loading>

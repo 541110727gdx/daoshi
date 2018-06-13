@@ -1,0 +1,74 @@
+<!--pages/my/my.wxml-->
+<view class="wei" hidden='{{weiHidden}}'>
+  未完成订单
+</view>
+  <block wx:for-items="{{video}}" wx:for-item="video"> 
+  <view class="ding" data-id='{{video.id}}' bindtap='gobao'>
+    <text><text>{{video[
+'FROM_UNIXTIME(payments.created_at, "%Y-%m-%d")']}}</text>期支付￥<text>{{video.money}}</text></text>
+    <text class='wanshan'>待完成</text> 
+  </view>
+ </block>  
+<view class="title" hidden='{{!comeHidden}}'>
+  我的视频
+</view>
+<!--学员视频  -->
+<view class="{{comeHidden == false?'view22':'view2'}}">
+<view class="come" hidden='{{comeHidden}}'>还没有视频，请<text bindtap='come'>去报名</text></view>
+   <block wx:for-items="{{film}}" wx:for-item="film" wx:for-index="index">
+    <view class="qi-num">{{film[1]}}期</view>
+      <block wx:for-items="{{film[2]}}" wx:for-item="msg" >
+        <view class="film-item" bindtap="goDetail" data-uid="{{msg.id}}"  data-vid="{{msg.video[0].id}}" data-title="{{msg.title}}">
+          <view class="film-image">
+            <image src="{{msg.video_img}}" hidden="{{msg.type == 1? true:false}}"></image>
+            <image src="../../img/yin.png" hidden="{{msg.type == 1? false:true}}"></image> 
+            <text hidden="{{msg.type == 0 ? false:true}}">视频</text>
+            <text hidden="{{msg.type == 0 ? true:false}}">音频</text> 
+          </view>
+          <view class="film-info">
+            <view>
+            <view class="film-name">{{msg.username}}</view>
+          <view class="film-num">￥{{msg.money}}</view>
+            </view>
+          </view> 
+        </view>
+      </block>
+  </block>
+</view>
+<!--点评视频  -->
+
+<view class="view3">
+ <view class="title-dian" hidden='{{!comeHidden}}'>
+  点评视频
+</view> 
+  <block wx:for-items="{{teaFilm}}" wx:for-item="teaFilm">
+    <video custom-cache="{{false}}" src="{{teaFilm.video_url}}" poster='{{teaFilm.video_img}}'></video>
+    <view class="con-wu">
+      <view class="wu">巫启贤
+        <text class="play-num"><text>6578</text>次播放</text>
+      </view>
+      <view class="start-ping">
+        <text>导师评分</text>
+        <view class="start">
+          <icon class="{{teaFilm.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+          <icon class="{{teaFilm.standard >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+          <icon class="{{teaFilm.standard >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+          <icon class="{{teaFilm.standard >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+          <icon class="{{teaFilm.standard >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+        </view>
+      </view>
+    </view>
+</block> 
+</view>
+ 
+<cover-view class="tab">
+    <cover-view class="tab-view1" bindtap='goHome'>
+      <cover-image src="../../img/index.png"></cover-image>
+      <cover-view class="index-view">首页</cover-view>
+    </cover-view>
+    <cover-view class="tab-view2">
+      <cover-image src="../../img/my-act.png"></cover-image>
+      <cover-view class="my-view">我的</cover-view>
+    </cover-view>
+</cover-view>
+<loading hidden="{{loadingHidden}}">请稍后...</loading>

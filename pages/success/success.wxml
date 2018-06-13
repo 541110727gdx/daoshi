@@ -1,0 +1,5 @@
+<!--pages/success/success.wxml-->
+<view>
+  您上传的音频或视频已成功提交，平台会在24小时内完成审核，导师会在36小时内完成点评回复，谢谢您对导师平台的支持。
+  <button bindtap='goHome'>回到首页</button>
+</view>

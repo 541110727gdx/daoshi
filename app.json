@@ -1,0 +1,24 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/baoming/baoming",
+    "pages/guize/guize",
+    "pages/my/my",
+    "pages/homeTea/homeTea",
+    "pages/find/find",
+    "pages/yiDian/yiDian",
+    "pages/home/home",
+    "pages/detailTea/detailTea",
+    "pages/hua/hua",
+    "pages/register/register",
+    "pages/detail/detail",
+    "pages/success/success"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1b1b1f",
+    "navigationBarTitleText": "鱼乐点",
+    "navigationBarTextStyle":"white"
+  },
+  "debug": false
+}

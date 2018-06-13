@@ -1,0 +1,93 @@
+<!--pages/baoming/baoming.wxml-->
+<view class="body">
+  <view class="body-con">
+    <!--个人信息  -->
+    <view class="con-view">
+      姓名：
+      <input placeholder="" bindblur="userName" value="{{name}}"/>
+    </view>
+    <view class="con-view">
+      性别：
+    <radio-group class="group" bindchange="userSex">
+      <view class="label-2" wx:for="{{radioItems}}">    
+        <radio color='#202020' value="{{item.sex}}" checked="{{item.checked}}"></radio>  
+        <image src="{{item.name}}"></image>
+      </view>
+    </radio-group>
+    </view>
+    <view class="con-view">
+      年龄：
+      <input placeholder="" bindblur="userAge" type='number' value="{{age}}"/>
+    </view>
+    <view class="con-view">
+      城市：
+      <picker bindchange="userCity" value="{{index}}" range="{{array}}">
+        <view class="weui-input" bindtap='lala' data-message="{{array[index]}}">{{array[index]}}</view>
+      </picker>
+    </view>
+    <view class="con-view">
+      职业：
+      <input placeholder="" bindblur="userOcc"  value="{{occ}}"/>
+    </view>
+    <!-- 心态  -->
+    <view class="con-idea">
+       对音乐及歌唱抱以什么心态：
+      <radio-group class="group-idea" bindchange="userIdea">
+        <view class="label-1" wx:for="{{checkboxItems}}">    
+          <radio value="{{item.value}}" color='#202020' checked="{{item.checked}}">{{item.value}}</radio>
+        </view>
+      </radio-group>
+      其他：
+      <input class="txa1" bindblur='tapTextarea1' value="" placeholder="我也有其他想法(15字以内)" disabled='{{textDis}}'/>
+    </view>
+    <!--理想  -->
+     <view class="con-idea2">
+       对歌唱的理想：
+      <radio-group class="group-idea2" bindchange="userDes">
+        <view class="label-1" wx:for="{{checkbox2Items}}">    
+          <radio value="{{item.value}}" color='#202020' checked="{{item.checked}}" disabled="{{radioDisabled}}">{{item.value}}</radio>
+        </view>
+      </radio-group>
+      其他：
+      <input class="txa2" bindblur='tapTextarea2' value="" placeholder="我也有其他想法(15字以内)" disabled='{{textDis}}'/>
+    </view>
+    <!--上传作品  -->
+    <view class="add-work">
+      添加作品
+    </view>
+    <image hidden='{{imageHidden}}' catchtap='showVideo' class="videoImage" src='{{videoImage}}'></image>
+    <view hidden='{{videoHidden}}' class='videoView'>
+      <view class="closeVIdeo" catchtap='closeVideo'></view>
+      <video src='{{videoUrl}}'></video>
+      <button catchtap='delVideo'>删除该视频重新上传</button>
+    </view>
+    <view class="add-w" catchtap='showZz' hidden='{{wHidden}}'></view>
+    <audio class="audio2" style="text-align: left" poster="{{userImg}}" src="{{yinUrl}}" name="" author="{{userName}}" controls hidden='{{audioHidden2}}'></audio> 
+    <!--是否公开  -->
+      <view class="gongkai">是否公开
+      <text class='gong_text'>{{gong}}</text>
+      <switch checked bindchange="switch1Change" color='#202020'></switch>
+    </view>  
+    <!--提交  -->
+    <button bindtap='submit'>提交</button>
+  </view>
+</view>
+<!--选择视频音频遮罩层  -->
+<view class="zz {{showView? 'zz-show' : 'zz-hide'}}">
+  <view class="zz-btn">
+     <view catchtap='showYin'></view> 
+    <!-- <view></view> -->
+    <view catchtap='chooseVideo'></view>
+    <view catchtap='hideZz'></view>
+  </view>
+</view>
+<!--音频遮罩层  -->
+<view class="yinpin" hidden='{{yinpinHidden}}'>
+  <audio style="text-align: left" poster="{{userImg}}" src="{{yinUrl}}" name="" author="{{userName}}" controls hidden='{{audioHidden}}'></audio> 
+  <image catchtap="startLu" src='../../img/luyin.png' hidden='{{luImgHidden}}'></image>
+  <image class="gif" src='../../img/gif.gif' hidden='{{gifHidden}}'></image>
+  <view class="yin-done" catchtap='yinDone' hidden='{{doneHidden}}'>完成</view>
+  <view class="yin-again" hidden='{{againHidden}}' catchtap='again'>重录</view>
+  <view class="yin-finish" hidden='{{againHidden}}' catchtap='useYin'>使用</view>
+</view>
+<loading hidden="{{loadingHidden}}">请稍后...</loading>
