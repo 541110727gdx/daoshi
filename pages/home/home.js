@@ -104,7 +104,17 @@ Page({
         url: '../login/login'
       })
     }
-    
+  },
+  goGuang: function () {
+    if (wx.getStorageSync('loginKey')) {
+      wx.navigateTo({
+        url: '../guang/guang'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
   }
 })
 

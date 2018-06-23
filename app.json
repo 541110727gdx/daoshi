@@ -1,9 +1,10 @@
 {
-  "pages":[
+  "pages": [
+    "pages/my/my",
     "pages/login/login",
+    "pages/guang/guang",
     "pages/baoming/baoming",
     "pages/guize/guize",
-    "pages/my/my",
     "pages/homeTea/homeTea",
     "pages/find/find",
     "pages/yiDian/yiDian",
@@ -14,11 +15,11 @@
     "pages/detail/detail",
     "pages/success/success"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1b1b1f",
     "navigationBarTitleText": "鱼乐点",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "debug": false
 }

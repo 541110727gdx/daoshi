@@ -24,6 +24,17 @@ Page({
       url: '../home/home'
     })
   },
+  goGuang: function () {
+    if (wx.getStorageSync('loginKey')) {
+      wx.navigateTo({
+        url: '../guang/guang'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

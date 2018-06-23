@@ -16,7 +16,7 @@ App({
               code: res.code
             },
             success:function(res) {
-              console.log(res)
+              // console.log(res)
               wx.setStorageSync('openId', res.data)
               console.log(wx.getStorageSync('openId'))
             }

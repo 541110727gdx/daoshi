@@ -1,109 +1,8 @@
-/* pages/my/my.wxss */
 page{
-  width: 100%;
-  height: 100%;
+  background: #f5f5f5;
 }
-.title{
-  width: 88%;
-  height: 80rpx;
-  line-height: 80rpx;
-  font-size: 30rpx;
-  margin: 0 auto;
-  padding-left:6%;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/cXEliPO4IkHHW8ywufGqSj1RoAunRMCBxGa8Bsdy65Y!/m/dPkAAAAAAAAAnull&bo=FAAaAAAAAAADByw!&rf=photolist&t=5) left center no-repeat;
-  background-size: 14px 18px;
-}
-video{
-  width: 100%;
-  height: 400rpx;
-}
-.stu-msg{
-  color:#616161;
-  line-height: 60rpx;
-  width: 92%;
-  margin: 0 auto;
-  font-size: 32rpx;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e8e8e8;
-}
-.stu-msg view:nth-child(1) {
-  padding-left:66rpx;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/2q*KcOAn*S7SK3UeHjqy7Hb420uO3BCXgVEQ9ajsDcY!/m/dBcBAAAAAAAAnull&bo=HgAfAAAAAAADByM!&rf=photolist&t=5) left center no-repeat;
-  background-size: 44rpx 40rpx;
-}
-.play-num{
-  float: right;
-  color:#868686;
-}
-.stu-msg view:nth-child(2) {
-  padding-left:66rpx;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/txBr*M7T7ZLQwpGLuah.vMfYG1HE7Ej2rY6fkyDqeYo!/m/dBgBAAAAAAAAnull&bo=JgAfAAAAAAADBxs!&rf=photolist&t=5) left center no-repeat;
-  background-size: 46rpx 40rpx;
-}
-.stu-msg view:nth-child(2) text:nth-child(1){
-  margin-right: 20px;
-}
-.stu-msg view:nth-child(3) {
-  padding-left:66rpx;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/A.7Vi.*BWLd10U4Z8cntvNkuioXRzRyFwD*r3jive5o!/m/dBkBAAAAAAAAnull&bo=IgAfAAAAAAADBx8!&rf=photolist&t=5) left center no-repeat;
-  background-size: 44rpx 40rpx;
-}
-.stu-msg view:nth-child(4) {
-  padding-left:66rpx;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/x41srt1fpR5oduQgTggIjy7675WgHCa6IeiwRTPHOVk!/m/dEQAAAAAAAAAnull&bo=IwAgAAAAAAADByE!&rf=photolist&t=5) left center no-repeat;
-  background-size: 44rpx 40rpx;
-}
-.stu-msg view:nth-child(5) {
-  padding-left:66rpx;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/ED0jyeewSpxeqbDmiYtbBMXTAfRnKsEAWkreiGCpwR4!/m/dEQAAAAAAAAAnull&bo=IwAfAAAAAAADBx4!&rf=photolist&t=5) left center no-repeat;
-  background-size: 44rpx 40rpx;
-}
-.stu-msg view:nth-child(5) text:nth-child(1){
-  margin-right: 20px;
-}
-.title-dian{
-  width: 88%;
-  height: 90rpx;
-  line-height: 90rpx;
-  font-size: 30rpx;
-  padding-left:6%; 
-  margin: 0 auto;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/.J0Pyjp8iv*TuVflQWRjpBliq47l9GmOaSe6tff9Qac!/m/dEIAAAAAAAAAnull&bo=HAAcAAAAAAADByI!&rf=photolist&t=5) left center no-repeat;
-  background-size: 35rpx 35rpx;
-}
-.con-wu{
-   width: 92%;
-   height: 300rpx;
-  margin: 0 auto;
-  font-size: 32rpx;
-  margin-top:20px;
-}
-.wu{
-   padding-left:66rpx;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/2q*KcOAn*S7SK3UeHjqy7Hb420uO3BCXgVEQ9ajsDcY!/m/dBcBAAAAAAAAnull&bo=HgAfAAAAAAADByM!&rf=photolist&t=5) left center no-repeat;
-  background-size: 44rpx 40rpx;
-}
-.start-ping{
-  height: 80rpx;
-  line-height: 80rpx;
-  margin-top:20px;
-}
-.start-ping text{
-  float: left;
-  margin-right: 20px;
-}
-image{
-  display: inline-block;
-  width: 60rpx;
-  height: 60rpx;
-}
-.start{
-  float: left;
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+.my-list{
+  padding-bottom: 100rpx;
 }
 .tab{
   width: 100%;
@@ -121,9 +20,9 @@ image{
   margin-top:6px;
   display: block;
 }
-.tab-view1,.tab-view2{
+.tab-view1,.tab-view2,.tab-view3{
   text-align: center;
-  width: 50%;
+  width: 33.333333%;
   height: 100%;
   float: left;
   display: flex;
@@ -140,56 +39,123 @@ image{
 .my-view{
   color:#383838;
 }
-.wei{
-  width: 88%;
-  height: 80rpx;
-  line-height: 80rpx;
-  font-size: 30rpx;
+.my{
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.my-main{
+  width: 670rpx;
   margin: 0 auto;
 }
 .ding{
-  width: 88%;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+.ding-con{
+  width: 670rpx;
+  height: 100%;
+  margin: 0 auto;
+}
+.ding-title{
+  float: left;
+  color: #111111;
+  font-size: 16px;
+}
+.ding-cha{
+  float: right;
+  color: #6f6f6f;
+  font-size: 12px;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/RzA0R8k.nRvC43NyU5zPjsMg6*thjPWB1ql8.61zNnA!/m/dEQAAAAAAAAAnull&bo=CwAUAAAAAAADBz0!&rf=photolist&t=5) right center no-repeat;
+  background-size: 14rpx 22rpx;
+  padding-right: 10px;
+}
+.ding-main{
+  width: 630rpx;
+  margin: 0 auto;
+}
+.ding-main1{
+  width: 100%;
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 30rpx;
-  margin: 0 auto;
-  padding-left:6%;
-  position: relative;
+  border-bottom: 1px solid #e6e6e6;
 }
-.wanshan{
-  width: 116rpx;
-  position: absolute;
-  right: 0%;
-  top:0;
-  color:#fb5858;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/chxi4E5AcYhZ*BlyqooB28b2NEo3XqKubqeZ09PrRQc!/m/dEQAAAAAAAAAnull&bo=CwAUAAAAAAADBz0!&rf=photolist&t=5) right center no-repeat;
-  background-size: 17rpx 30rpx;
+.ding-num{
+  color: #353535;
+  font-size: 14px;
+  float: left;
 }
-.icon{
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/JnujFnBqCw72zbBC*A1MVx19RK04ksHU7RvqWDYPQ.M!/m/dPcAAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
-  width: 60rpx;
-  height: 60rpx;
-  background-size: 100% 100%;
+.ding-status{
+  float: right;
+  height: 100%;
+  color: #fb5858;
+  font-size: 14px;
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/RzA0R8k.nRvC43NyU5zPjsMg6*thjPWB1ql8.61zNnA!/m/dEQAAAAAAAAAnull&bo=CwAUAAAAAAADBz0!&rf=photolist&t=5) right center no-repeat;
+  background-size: 14rpx 22rpx;
+  padding-right: 10px;
 }
-.cur{
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/zoqZpDmXvhbCfi5uQ0Z8Ysyn.f4Bq3WMLfZpEJutQxs!/m/dLMAAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
-  width: 60rpx;
-  height: 60rpx;
-  background-size: 100% 100%;
-}
-.film-list{
+.ding-main2{
   width: 100%;
-   /* margin-bottom: 88px;  */
-   padding-bottom: 44px; 
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
 }
-.film-item{
-  width: 315rpx;
-  height: 290rpx;
-  /* float: left; */
+.ding-main2 view:nth-child(1) {
+  margin-top: 10px;
+}
+.ding-main2 view{
+  color: #353535;
+  font-size: 14px;
+  line-height: 50rpx;
+}
+.ding-money{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.ding-money text{
+  color: #f54646;
+}
+.zhifu{
+  float: left;
+}
+.tian{
   display: inline-block;
-  /* position: relative; */
-  margin-left:40rpx;
-  margin-bottom: 20rpx;
+  width: 130rpx;
+  height: 100%;
+  float: right;
+  background: #5989d8;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.qihao{
+  color: #111111;
+  font-size: 14px;
+  line-height: 80rpx;
+}
+.nei{
+  width: 100%;
+  height: 285rpx;
+  padding-bottom:10px; 
+}
+.nei2{
+  width: 100%;
+  height: 250rpx;
+  padding-bottom:10px; 
+}
+.nei-item{
+  width: 315rpx;
+  height: 100%;
+  float: left;
+}
+.nei-item:nth-child(1) {
+  margin-right: 39rpx;
 }
 .film-image{
   width: 100%;
@@ -197,35 +163,25 @@ image{
   float: left;
   position: relative;
 }
-.film-image text{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  width: 70rpx;
-  height: 40rpx;
-  color:#fff;
-  font-size: 14px;
-  text-align: center;
-  line-height: 40rpx;
-  border-radius: 5px;
+.film-yin{
+  background:#fff;
+  width: 100%;
+  height: 184rpx;
+  float: left;
+  position: relative;
 }
-
-.film-image image{
-  border-radius: 5px;
+.film-image{
+  background:#000;
 }
-.film-image image{
+.film-image .yinImg,.film-yin .yinImg{
   width: 100%;
   height: 100%;
 }
-.film-info{
-  width: 100%;
-  height: 106rpx;
-  float:right;
-}
-.film-msg{
-  height: 44rpx;
-  margin-top:15rpx;
+.film-image .shiImg,.film-yin .shiImg{
+  margin: 0 20%;
+  width: 60%;
+  height: 100%;
+  border-radius: 0px;
 }
 .film-name{
     margin: 10rpx 0;
@@ -233,43 +189,62 @@ image{
     color:#353535;
 }
 .film-num{
-  font-size: 12px;
+  float: left;
+  font-size: 14px;
   color:#868686;
+   padding-left:14%;
+   background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/jfv9.a1OydLfux.MZ5eg7mchqS3nfe993dbYDK8bqo8!/m/dEQAAAAAAAAAnull&bo=EgAPAAAAAAADBz8!&rf=photolist&t=5) left center no-repeat;  
+}
+.shichang{
+  float: right;
+  color: #868686;
+  font-size: 12px;
   padding-left:14%;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/jfv9.a1OydLfux.MZ5eg7mchqS3nfe993dbYDK8bqo8!/m/dEQAAAAAAAAAnull&bo=EgAPAAAAAAADBz8!&rf=photolist&t=5) left center no-repeat;
+    background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/1sRkWXcsuEi87bqSYKBiLrMNcJw4e3*VC4iSJJNL19M!/m/dDEBAAAAAAAAnull&bo=FAAUAAAAAAADByI!&rf=photolist&t=5) left center no-repeat;  
+    background-size: 18px 18px;
 }
-.qi-num{
-  width: 670rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  margin: 0 40rpx;
-  color:#111;
-  font-size: 18px;
-}
-.view2{
+.film-info{
   width: 100%;
-  height: auto;
-  position: relative;
+  height: 106rpx;
+  float:right;
 }
-.view22{
-  width: 100%;
-  min-height: 100rpx;
-  position: relative;
+.start-ping{
+  height: 40rpx;
+  line-height: 40rpx;
+  float: left;
+  margin-top: 5px;
 }
-.view3{
-  width: 100%;
-  height: auto;
+.start-ping text{
+  float: left;
+  font-size: 14px;
+  margin-right: 10px;
 }
-.come{
-  position: absolute;
-  top: 50%;
-  left:0;
-  width: 100%;
-  height: 90rpx;
-  line-height: 90rpx;
-  margin-top:-45rpx;
-  text-align: center;
+image{
+  display: inline-block;
+  width: 52rpx;
+  height: 52rpx;
 }
-.come text{
-  color:#43d7b2;
+.start{
+  float: left;
+  width: 74px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+.icon{
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/JnujFnBqCw72zbBC*A1MVx19RK04ksHU7RvqWDYPQ.M!/m/dPcAAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
+  width: 52rpx;
+  height: 32rpx;
+  background-size: 100% 100%;
+  margin-right:2px; 
+}
+.cur{
+  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/zoqZpDmXvhbCfi5uQ0Z8Ysyn.f4Bq3WMLfZpEJutQxs!/m/dLMAAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
+  width: 52rpx;
+  height: 32rpx;
+  background-size: 100% 100%;
+}
+
+

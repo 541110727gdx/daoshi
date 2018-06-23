@@ -10,14 +10,14 @@
   </block> -->
   <!-- <block wx:if="{{showLoading}}"> -->
     <scroll-view style="height: 800rpx" scroll-y="true" class="container film-list" bindscroll="">
-    <view class="hua">
+    <!-- <view class="hua">
       <view class="qi-num">导师花絮</view>
       <view class="hua-view">
         <view class="hua-view2">
           <image class="hua-img" src="{{hua[0].video_img}}" bindtap='goHua'></image>
         </view>
       </view>
-    </view>
+    </view> -->
       <block wx:for-items="{{film}}" wx:for-item="film" wx:for-index="index">
         <view class="qi-num">{{film[1]}}期</view>
           <block wx:for-items="{{film[2]}}" wx:for-item="msg" >
@@ -39,9 +39,10 @@
                   <view class="film-name">{{msg.username}}</view>
                 </view>
                 <view>
-                  <text class="ifyin" wx:if="{{msg.type == 1}}">音频</text>
-                  <text class='ifyin' wx:else>视频</text>
-                   <text class="film-num">播放量：{{msg.play_number}}</text>
+                  <!-- <text class="ifyin" wx:if="{{msg.type == 1}}">音频</text>
+                  <text class='ifyin' wx:else>视频</text> -->
+                  <text class='shichang'>03:44</text>
+                   <text class="film-num">{{msg.play_number}}</text>
                 </view>
               </view> 
             </view>
@@ -74,6 +75,10 @@
     <view class="tab-view1">
       <image src="../../img/index-act.png"></image>
       <view class="index-view">首页</view>
+    </view>
+    <view class="tab-view3" bindtap='goGuang'>
+      <image src="../../img/guang.png"></image>
+      <view class="my-view">广场</view>
     </view>
     <view class="tab-view2" bindtap='goMy'>
       <image src="../../img/my.png"></image>

@@ -1,0 +1,64 @@
+<!--pages/guang/guang.wxml-->
+<scroll-view>
+<view class='guang-main'>
+  <input class='search' type='text' placeholder='搜索' bindblur='search'></input>
+  <view class='sea1'>
+    <text bindtap='seaClick1' class='{{re == true?"act":""}}'>热度</text>
+    <text bindtap='seaClick2' class='{{shi == true?"act":""}}'>时间</text>
+  </view>
+  <view class='sea2'>
+   <text class='act qi'>期数</text>
+    <scroll-view scroll-x='true' class='scroll2'>
+    <block wx:for='{{activity}}' wx:key='activity'>
+      <text bindtap='dateClick' class='{{num == index?"act":""}}' data-date='{{item}}' data-index='{{index}}'>{{item}}</text>
+    </block>
+    </scroll-view>
+  </view>
+</view>
+<!--循环  -->
+<view class='guang-list'>
+<block wx:for-items="{{guang}}" wx:for-item="item" wx:key='guang'>
+  <view class="film-item" bindtap="goDetail" data-uid="{{item.user_id}}"  data-vid="{{item.id}}" data-title="{{}}">
+    <view class="{{item.type == 1? 'film-yin':'film-image'}}">
+      <image class="shiImg" src="{{item.video_img}}" hidden="{{item.type == 1? true:false}}"></image>
+      <image class="yinImg" src="../../img/yin.png" hidden="{{item.type == 1? false:true}}"></image> 
+        <text hidden="{{item.master_id == 0? false:true}}">未点评</text> 
+      <view class="start" hidden="{{item.master_id == 0? true:false}}"> 
+        <icon class="{{item.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+        <icon class="{{item.standard >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+        <icon class="{{item.standard >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+        <icon class="{{item.standard >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+        <icon class="{{msg.standard >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+      </view>
+    </view>
+    <view class="film-info">
+      <view>
+        <view class="film-name">{{item.upload_name}}</view>
+      </view>
+      <view>
+        <!-- <text class="ifyin" wx:if="{{item.type == 1}}">音频</text>
+        <text class='ifyin' wx:else>视频</text> -->
+        <text class='shichang'>03:44</text>
+        <text class="film-num">{{item.play_number}}</text>
+      </view>
+    </view> 
+  </view>
+</block>
+</view>
+  
+</scroll-view>
+<view class="tab">
+    <view class="tab-view1">
+      <image src="../../img/index.png" bindtap='goHome'></image>
+      <view class="my-view">首页</view>
+    </view>
+    <view class="tab-view3">
+      <image src="../../img/guang-act.png"></image>
+      <view class="index-view">广场</view>
+    </view>
+    <view class="tab-view2" bindtap='goMy'>
+      <image src="../../img/my.png"></image>
+      <view class="my-view">我的</view>
+    </view>
+  </view>
+ <loading hidden="{{loadingHidden}}">请稍后...</loading> 

@@ -1,5 +1,5 @@
-<!--pages/my/my.wxml-->
-<view class="wei" hidden='{{weiHidden}}'>
+
+<!-- <view class="wei" hidden='{{weiHidden}}'>
   未完成订单
 </view>
   <block wx:for-items="{{video}}" wx:for-item="video"> 
@@ -11,9 +11,9 @@
  </block>  
 <view class="title" hidden='{{!comeHidden}}'>
   我的视频
-</view>
+</view> -->
 <!--学员视频  -->
-<view class="{{comeHidden == false?'view22':'view2'}}">
+<!-- <view class="{{comeHidden == false?'view22':'view2'}}">
 <view class="come" hidden='{{comeHidden}}'>还没有视频，请<text bindtap='come'>去报名</text></view>
    <block wx:for-items="{{film}}" wx:for-item="film" wx:for-index="index">
     <view class="qi-num">{{film[1]}}期</view>
@@ -34,10 +34,10 @@
         </view>
       </block>
   </block>
-</view>
+</view> -->
 <!--点评视频  -->
 
-<view class="view3">
+ <!-- <view class="view3">
  <view class="title-dian" hidden='{{!comeHidden}}'>
   点评视频
 </view> 
@@ -58,17 +58,125 @@
         </view>
       </view>
     </view>
-</block> 
-</view>
- 
+</block>
+</view> -->
+<!--订单  -->
+ <scroll-view class='my-list'>
+  <view class='my'>
+      <view class='ding'>
+        <view class='ding-con'>
+          <view class='ding-title'>我的订单</view>
+          <view class='ding-cha'>查看全部订单</view>
+        </view>
+      </view>
+    <view class='my-main'>
+      
+      <view class='ding-main'>
+        <view class='ding-main1'>
+          <view class='ding-num'>订单号：sdfgdwe324234dfg</view>
+          <view class='ding-status'>待完成</view>
+        </view>
+        <view class='ding-main2'>
+          <view>期号：2018-06-22期</view>
+          <view>类型：定价报名</view>
+          <view>支付时间：2018-06-22</view>
+        </view>
+        <view class='ding-money'>
+          <view class='zhifu'>支付金额：<text>￥0.01</text></view>
+          <view class='tian'>填写信息</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--内容  -->
+  <view class='my'>
+      <view class='ding'>
+        <view class='ding-con'>
+          <view class='ding-title'>我的内容</view>
+          <view class='ding-cha'>查看全部内容</view>
+        </view>
+      </view>
+    <view class='my-main'>
+      <view class='qihao'>期号：2018-06-22</view>
+        <view class='nei'>
+          <view class='nei-item'>
+            <view class='film-image'>
+              <image class="shiImg" src="../../img/img1.png" hidden="{{false}}"></image>
+              <!-- <image class="yinImg" src="../../img/yin.png" hidden="{{item.type == 1? false:true}}"></image>  -->
+            </view>
+            <view class='film-info'>
+              <view class='film-name'>梦里花开成海</view>
+              <view class='film-num'>157</view>
+            </view>
+          </view>
+          <view class='nei-item'>
+            <view class='film-image'>
+              <image class="shiImg" src="../../img/img1.png" hidden="{{false}}"></image>
+              <!-- <image class="yinImg" src="../../img/yin.png" hidden="{{item.type == 1? false:true}}"></image>  -->
+            </view>
+            <view class='film-info'>
+              <view class='film-name'>梦里花开成海</view>
+              <view class='film-num'>157</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <!--评价  -->
+  <view class='my'>
+    <view class='ding'>
+        <view class='ding-con'>
+          <view class='ding-title'>我的评价</view>
+          <view class='ding-cha'>查看全部评价</view>
+        </view>
+      </view>
+    <view class='my-main'>
+      <view class='qihao'>期号：2018-06-22</view>
+        <view class='nei2'>
+          <view class='nei-item'>
+            <view class='film-image'>
+              <image class="shiImg" src="../../img/img1.png" hidden="{{false}}"></image>
+              <!-- <image class="yinImg" src="../../img/yin.png" hidden="{{item.type == 1? false:true}}"></image>  -->
+            </view>
+            <view class="start-ping">
+              <text>导师评分</text>
+              <view class="start">
+                <icon class="{{teaFilm.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+                <icon class="{{teaFilm.standard >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+                <icon class="{{teaFilm.standard >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+                <icon class="{{teaFilm.standard >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+                <icon class="{{teaFilm.standard >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+              </view>
+            </view>
+          </view>
+          
+        </view>
+      </view>
+  </view>
+</scroll-view>
 <cover-view class="tab">
     <cover-view class="tab-view1" bindtap='goHome'>
       <cover-image src="../../img/index.png"></cover-image>
       <cover-view class="index-view">首页</cover-view>
+    </cover-view>
+    <cover-view class="tab-view3" bindtap='goGuang'>
+      <cover-image src="../../img/guang.png"></cover-image>
+      <cover-view class="index-view">广场</cover-view>
     </cover-view>
     <cover-view class="tab-view2">
       <cover-image src="../../img/my-act.png"></cover-image>
       <cover-view class="my-view">我的</cover-view>
     </cover-view>
 </cover-view>
-<loading hidden="{{loadingHidden}}">请稍后...</loading>
+<loading hidden="{{loadingHidden}}">请稍后...</loading> 
+
+
+
+
+
+
+
+
+
+
+
