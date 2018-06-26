@@ -187,6 +187,9 @@ page{
     margin: 10rpx 0;
     font-size: 16px;
     color:#353535;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 .film-num{
   float: left;
@@ -246,5 +249,13 @@ image{
   height: 32rpx;
   background-size: 100% 100%;
 }
-
-
+.qing{
+  width: 100%;
+  line-height: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  font-size: 18px;
+}
+.qing text{
+  color: #72c365;
+}

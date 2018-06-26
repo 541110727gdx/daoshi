@@ -22,6 +22,7 @@ Page({
     pay2Hidden:true,
     timeHiden: false,
     moneyList:'',
+    dingId:'',
     dateId:'',
     inputValue:'0.00',
     appid:'wx6afc15bd137e4c72',
@@ -29,18 +30,7 @@ Page({
     selected: true,
     selected1: false,
     ifShi:'1',
-    listData: [
-      { "code": "1", "text": "text1", "type": "type1" },
-      { "code": "2", "text": "text2", "type": "type2" },
-      { "code": "3", "text": "text3", "type": "type3" },
-      { "code": "4", "text": "text4", "type": "type4" },
-      { "code": "5", "text": "text5", "type": "type5" },
-      { "code": "6", "text": "text6", "type": "type6" },
-      { "code": "7", "text": "text7", "type": "type7" },
-      { "code": "8", "text": "text8", "type": "type7" },
-      { "code": "9", "text": "text9", "type": "type7" },
-      { "code": "10", "text": "text10", "type": "type7" },
-    ]
+    listData: []
   },
   selected: function (e) {
     this.setData({
@@ -72,6 +62,8 @@ Page({
           that.setData({
             payHidden: true,
             pay2Hidden: false,
+            loadingHidden:true,
+            moneyList: res.data,
           })
         } else {
           that.time(res.data.activity_begin, res.data.current)
@@ -154,8 +146,6 @@ Page({
           console.log(url.url(res.data));
           var msg2 = url.haha(res.data);
           var msg = url.url(res.data);
-          // console.log(msg2)
-          // console.log(msg)
           that.setData({
             nonceStr: msg.nonceStr,
             package: msg.prepay_id,
@@ -170,14 +160,25 @@ Page({
             'signType': 'MD5',
             'paySign': that.data.paySign,
             'success': function (res) {
-              console.log(res);
-              that.setData({
-                loadingHidden: false
+              
+              wx.request({
+                url: 'https://message.sharetimes.cn/api/square/paymentsid',
+                header: {//请求头
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                success:function(res) {
+                  console.log(res);
+                  that.setData({
+                    loadingHidden: false,
+                    dingId:res.data
+                  })
+                  var ifShi = that.data.ifShi;
+                  wx.redirectTo({
+                    url: '../baoming/baoming?ifShi=' + ifShi + '&dingId=' + that.data.dingId
+                  })
+                }
               })
-              var ifShi = that.data.ifShi;
-              wx.redirectTo({
-                url: '../baoming/baoming?ifShi=' + ifShi
-              })
+              
             },
             'fail': function (res) {
               // console.log('timeStamp:'+that.data.timestamp); 

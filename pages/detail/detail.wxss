@@ -1,13 +1,19 @@
 /* pages/detail/detail.wxss */
 .title{
-  width: 88%;
-  height: 80rpx;
-  line-height: 80rpx;
+  width: 670rpx;
+  height: auto;
+   line-height: 50rpx; 
   font-size: 30rpx;
   margin: 0 auto;
-  padding-left:6%;
-  background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/cXEliPO4IkHHW8ywufGqSj1RoAunRMCBxGa8Bsdy65Y!/m/dPkAAAAAAAAAnull&bo=FAAaAAAAAAADByw!&rf=photolist&t=5) left center no-repeat;
-  background-size: 14px 18px;
+  border-bottom: 1px solid #e8e8e8;
+  color: #616161;
+}
+.title-con{
+  width: 100%;
+  word-wrap: break-word;
+}
+.title text{
+  margin-left: 20rpx;
 }
 video{
   width: 100%;

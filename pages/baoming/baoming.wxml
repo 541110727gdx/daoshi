@@ -7,6 +7,10 @@
       <input placeholder="" bindblur="userName" value="{{name}}"/>
     </view>
     <view class="con-view">
+      视频标题：
+      <input placeholder="不超过30字" bindblur="videoTitle" value="{{title}}"/>
+    </view>
+    <view class="con-view">
       性别：
     <radio-group class="group" bindchange="userSex">
       <view class="label-2" wx:for="{{radioItems}}">    

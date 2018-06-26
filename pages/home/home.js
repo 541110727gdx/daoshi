@@ -30,7 +30,7 @@ Page({
     })
     wx.request({
       method:'Get',
-      url: 'https://message.sharetimes.cn/api/seven/contact',
+      url: 'https://message.sharetimes.cn/api/seven/home',
       header: {//请求头
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -40,42 +40,42 @@ Page({
           film:res.data,
           loadingHidden: true
         })
-        // console.log(that.data)
+        console.log(that.data)
       },
       error:function() {
         console.log("出错了")
       }
     })
-    wx.request({
-      method: 'Get',
-      url: 'https://message.sharetimes.cn/api/seven/tidbits',
-      header: {//请求头
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success:function(res) {
-        // console.log(res);
-        that.setData({
-          hua:res.data
-        })
-        // console.log(that.data.hua)
-      }
-    })
-    //判断是否为导师
-    if (wx.getStorageSync('teaNum')) {
-      console.log(11)
-      that.setData({
-        startHidden:true,
-        moneyHidden:false
-      })
-    } else {
+    // wx.request({
+    //   method: 'Get',
+    //   url: 'https://message.sharetimes.cn/api/seven/tidbits',
+    //   header: {//请求头
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   },
+    //   success:function(res) {
+    //     // console.log(res);
+    //     that.setData({
+    //       hua:res.data
+    //     })
+    //     // console.log(that.data.hua)
+    //   }
+    // })
+    // //判断是否为导师
+    // if (wx.getStorageSync('teaNum')) {
+    //   console.log(11)
+    //   that.setData({
+    //     startHidden:true,
+    //     moneyHidden:false
+    //   })
+    // } else {
       
-    }
+    // }
   },
-  goHua:function() {
-    wx.navigateTo({
-      url: '../hua/hua',
-    })
-  },
+  // goHua:function() {
+  //   wx.navigateTo({
+  //     url: '../hua/hua',
+  //   })
+  // },
   goDetail:function(e) {
     var filmid = e.currentTarget.dataset.uid;
     var videoid = e.currentTarget.dataset.vid;

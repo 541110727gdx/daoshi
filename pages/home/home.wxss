@@ -131,6 +131,9 @@ page{
     margin: 10rpx 0;
     font-size: 16px;
     color:#353535;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 .film-num{
   float: left;

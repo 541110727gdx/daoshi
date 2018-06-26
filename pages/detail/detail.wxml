@@ -5,11 +5,15 @@
 <!--学员视频  -->
   <audio class="audio2" style="text-align: left" poster="{{msg.head_img_url}}" src="{{msg.video_url}}" name="" author="{{msg.username}}" controls hidden='{{msg.type == 1?false : true}}'></audio> 
 <video custom-cache="{{false}}" src="{{msg.video_url}}" hidden='{{msg.type == 1?true:false}}' poster='{{msg.video_img}}'></video>
+
 <!-- 学员信息 -->
 <view class="{{msg.type == 1? 'stu-msg':'stu-msg2'}}">
+  <view class='title'>
+    <view class='title-con'>{{msg.title}}</view>
+    <view>播放量：{{msg.play_number}}<text>{{msg.created_at}}</text></view>
+  </view>
   <view>
     <text class="name">姓名：{{msg.username}}</text>
-    <!-- <text class="play-num"></text> -->
   </view>
   <view>性别：
     <text wx:if="{{msg.sex == 1}}">男</text>

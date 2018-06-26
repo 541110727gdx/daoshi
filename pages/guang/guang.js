@@ -139,7 +139,6 @@ Page({
       num:e.target.dataset.index,
       loadingHidden: false
     })
-    console.log(that.data.date)
     wx.request({
       url: 'https://message.sharetimes.cn/api/square/videosearch',
       header: {//请求头

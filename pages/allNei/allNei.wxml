@@ -1,0 +1,61 @@
+<!--pages/allNei/allNei.wxml-->
+<scroll-view>
+<view class='myNei' hidden='{{ifNei}}'>
+  <block wx:for='{{nei}}' wx:key='nei'>
+  <view class='nei'>
+      <view class='my-main'>
+        <view class='qihao'>期号：{{item.created_at}}</view>
+          <view class='nei'>
+            <block wx:for='{{item.video}}' wx:key='myvideo'>
+              <view class='nei-item' data-vid='{{item.id}}' data-uid='{{item.user_id}}' bindtap='goDetail'>
+                <view class="{{msg.type == 1? 'film-yin':'film-image'}}">
+                <image class="shiImg" src="{{item.video_img}}" hidden="{{item.type == 1? true:false}}"></image>
+                <image class="yinImg" src="../../img/yin.png" hidden="{{item.type == 1? false:true}}"></image> 
+              </view>
+                <view class='film-info'>
+                  <view class='film-name'>{{item.title}}</view>
+                  <view>
+                    <text class='shichang'>{{item.video_length}}</text>
+                    <text class="film-num">{{item.play_number}}</text>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+      </view>
+        
+  </view>
+    </block>
+</view>
+
+<view class='myEva' hidden='{{!ifNei}}'>
+  <block wx:for='{{nei}}' wx:key='nei'>
+  <view class='nei'>
+      <view class='my-main'>
+        <view class='qihao'>期号：{{item.created_at}}</view>
+          <view class='nei'>
+            <block wx:for='{{item.video}}' wx:key='myvideo'>
+              <view class='nei-item' data-vid='{{item.id}}' data-uid='{{item.user_id}}' bindtap='goDetail'>
+                <view class="{{msg.type == 1? 'film-yin':'film-image'}}">
+                <image class="shiImg" src="{{item.video_img}}" hidden="{{item.type == 1? true:false}}"></image>
+                <image class="yinImg" src="../../img/yin.png" hidden="{{item.type == 1? false:true}}"></image> 
+              </view>
+                <view class="start-ping">
+              <text>导师评分</text>
+              <view class="start">
+                <icon class="{{item.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+                <icon class="{{item.standard >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+                <icon class="{{item.standard >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+                <icon class="{{item.standard >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+                <icon class="{{item.standard >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+              </view>
+            </view>
+              </view>
+            </block>
+          </view>
+      </view>
+        
+  </view>
+    </block>
+</view>
+</scroll-view>

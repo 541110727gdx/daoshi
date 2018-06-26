@@ -51,7 +51,6 @@ Page({
     wHidden:false,
     yinUrl:'',
     recodePath:'',
-    dingId:'',
     imageHidden:true,
     videoHidden:true,
     addHidden:true,
@@ -91,14 +90,17 @@ Page({
     userOcc:'',
     userIdea:'',
     userDes:'',
-    ifShi:''
+    videoTitle:'',
+    ifShi:'',
+    payments_id:''
   },
   onLoad: function (options) {
     var that = this;
     that.setData({
-      ifShi:options.ifShi
+      ifShi:options.ifShi,
+      payments_id:options.dingId
     })
-    console.log(that.data.ifShi)
+    console.log(options)
     console.log(that.data)
   },
   // 姓名
@@ -116,6 +118,27 @@ Page({
     } else {
       this.setData({
         userName: e.detail.value
+      });
+    }
+  },
+  //视频标题
+  videoTitle:function(e) {
+    var titleLength = e.detail.value.length;
+    if (titleLength == 0) {
+      wx.showToast({
+        title: '请输入视频标题',
+        image: '../../img/error.png',
+        duration: 2000
+      })
+    } else if (titleLength > 30) {
+      wx.showToast({
+        title: '视频标题过长',
+        image: '../../img/error.png',
+        duration: 2000
+      })
+    } else {
+      this.setData({
+        videoTitle: e.detail.value
       });
     }
   },
@@ -299,9 +322,10 @@ Page({
           jop: that.data.userOcc,
           mentality: that.data.userIdea,
           ideality: that.data.userDes,
+          title: that.data.videoTitle,
           video_url: that.data.imageURL,
           openId: wx.getStorageSync('openId'),
-          dingId: that.data.dingId,
+          payments_id: that.data.payments_id,
           dateId: wx.getStorageSync('dateId'),
           ifOpen: that.data.ifOpen,
           ifShi:that.data.ifShi,
@@ -319,7 +343,7 @@ Page({
           }
         }
       })
-    } else if (that.data.userName && that.data.userSex && that.data.userAge && that.data.index && that.data.userOcc && that.data.userIdea && that.data.userDes && that.data.yinUrl2){
+    } else if (that.data.userName && that.data.userSex && that.data.userAge && that.data.index && that.data.userOcc && that.data.userIdea && that.data.userDes && that.data.yinUrl2 && that.data.videoTitle){
       console.log(that.data)
       that.setData({
         loadingHidden: false
@@ -340,8 +364,9 @@ Page({
           jop: that.data.userOcc,
           mentality: that.data.userIdea,
           ideality: that.data.userDes,
+          title: that.data.videoTitle,
+          payments_id: that.data.payments_id,
           openId: wx.getStorageSync('openId'),
-          dingId: that.data.dingId,
           dateId: wx.getStorageSync('dateId'),
           userImg: wx.getStorageSync('userImg'),
           ifOpen: that.data.ifOpen,

@@ -1,0 +1,86 @@
+<!--pages/allPayment/allPayment.wxml-->
+<view class='order'>
+  <view bindtap='ding1'>
+    <text class='{{ding1 == true?"act":""}}'>全部订单</text>
+  </view>
+  <view bindtap='ding2'>
+    <text class='{{ding2 == true?"act":""}}'>未完成</text>
+  </view>
+  <view bindtap='ding3'>
+    <text class='{{ding3 == true?"act":""}}'>已完成</text>
+  </view>
+</view>
+<scroll-view>
+  <view class='pay' hidden='{{!ding1}}'>
+    <view class='pay-con'>
+      <block wx:for='{{quan}}' wx:key='quan'>
+        <view class='ding-main'>
+          <view class='ding-main1'>
+            <view class='ding-num'>订单号：{{item.card_code}}</view>
+            <view class='ding-status' wx:if='{{item.video_id == 0}}'>待完成</view>
+            <view class='ding-status' style='color:#72c365' wx:else>已完成</view>
+          </view>
+          <view class='ding-main2'>
+            <view>期号：{{item.activity_at}}期</view>
+            <view wx:if='{{item.type == 0}}'>类型：定价报名</view>
+            <view wx:else>类型：竞价报名</view>
+            <view>支付时间：{{item.created_at}}</view>
+          </view>
+          <view class='ding-money'>
+            <view class='zhifu'>支付金额：<text>￥{{item.money}}</text></view>
+            <view class='tian'>填写信息</view>
+          </view>
+        </view>
+      </block>
+      
+    </view>
+  </view>
+
+  <view class='pay' hidden='{{!ding2}}'>
+    <view class='pay-con'>
+      <block wx:for='{{wei}}' wx:key='wei'>
+        <view class='ding-main'>
+          <view class='ding-main1'>
+            <view class='ding-num'>订单号：{{item.card_code}}</view>
+            <view class='ding-status'>待完成</view>
+          </view>
+          <view class='ding-main2'>
+            <view>期号：{{item.activity_at}}期</view>
+            <view wx:if='{{item.type == 0}}'>类型：定价报名</view>
+            <view wx:else>类型：竞价报名</view>
+            <view>支付时间：{{item.created_at}}</view>
+          </view>
+          <view class='ding-money'>
+            <view class='zhifu'>支付金额：<text>￥{{item.money}}</text></view>
+            <view class='tian'>填写信息</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='pay' hidden='{{!ding3}}'>
+    <view class='pay-con'>
+      <block wx:for='{{yi}}' wx:key='yi'>
+        <view class='ding-main'>
+          <view class='ding-main1'>
+            <view class='ding-num'>订单号：{{item.card_code}}</view>
+            <view class='ding-status' style='color:#72c365'>已完成</view>
+          </view>
+          <view class='ding-main2'>
+            <view>期号：{{item.activity_at}}期</view>
+            <view wx:if='{{item.type == 0}}'>类型：定价报名</view>
+            <view wx:else>类型：竞价报名</view>
+            <view>支付时间：{{item.created_at}}</view>
+          </view>
+          <view class='ding-money'>
+            <view class='zhifu'>支付金额：<text>￥{{item.money}}</text></view>
+            <view class='tian'>填写信息</view>
+          </view>
+        </view>
+      </block>
+      
+    </view>
+  </view>
+</scroll-view>
+<loading hidden="{{loadingHidden}}">请稍后...</loading> 

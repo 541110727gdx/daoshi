@@ -1,14 +1,14 @@
 /* pages/baoming/baoming.wxss */
 .body{
   width: 100%;
-  height: 2000rpx;
+  height: 2200rpx;
   background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/7LcQKXJAplijw6ZsOTtYX1QDjdCG6PHINXDkZrGjJ7k!/m/dPcAAAAAAAAAnull&bo=gAIMBgAAAAARB7g!&rf=photolist&t=5) no-repeat;
   background-size: 100% 100%;
   overflow: hidden
 }
 .body-con{
   width: 626rpx;
-  height: 1900rpx;
+  height: 2100rpx;
   margin: 20px auto 0;
   padding: 0 42rpx 0;
   background: #fff;
