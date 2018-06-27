@@ -125,7 +125,7 @@ Page({
         evaluate: options.vid
       },
       success: function (res) {
-        // console.log(res)
+        console.log(res)
         that.setData({
           teaArr: res.data
         })
@@ -246,7 +246,8 @@ Page({
           // openId: wx.getStorageSync('openId'),
           evaluate: that.data.vid,
           standard: that.data.tabArr.curHdIndex,
-          type:'1'
+          type:'1',
+          evaId: wx.getStorageSync('evaId')
         },
         header: {//请求头
           'content-type': 'application/x-www-form-urlencoded'

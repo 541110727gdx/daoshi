@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/homeTea/homeTea",
     "pages/my/my",
     "pages/baoming/baoming",
     "pages/allPayment/allPayment",
     "pages/guang/guang",
     "pages/guize/guize",
-    "pages/homeTea/homeTea",
     "pages/find/find",
     "pages/yiDian/yiDian",
     "pages/home/home",

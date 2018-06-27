@@ -18,7 +18,7 @@
         </view>
       </view>
     </view> -->
-          <block wx:for-items="{{film}}" wx:for-item="msg" >
+          <block wx:for-items="{{film}}" wx:for-item="msg" wx:key='msg'>
             <view class="film-item" bindtap="goDetail" data-uid="{{msg.user_id}}"  data-vid="{{msg.id}}" data-title="{{msg.title}}">
               <view class="{{msg.type == 1? 'film-yin':'film-image'}}">
                 <image class="shiImg" src="{{msg.video_img}}" hidden="{{msg.type == 1? true:false}}"></image>

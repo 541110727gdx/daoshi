@@ -15,34 +15,38 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options) {//未点评
     var that = this;
     that.setData({
       loadingHidden: false
     })
     wx.request({
-      method: 'Get',
-      url: 'https://message.sharetimes.cn/api/seven/none',
+      method: 'POST',
+      url: 'https://message.sharetimes.cn/api/seven/teacher',
       header: {//请求头
         'content-type': 'application/x-www-form-urlencoded'
       },
       data:{
-        openId: wx.getStorageSync('openId')
+        type:2
       },
       success: function (res) {
         console.log(res);
-        that.setData({
-          film: res.data,
-          loadingHidden:true
-        })
-        // console.log(that.data.film)
+        if(res.data.code == 'ok') {
+          that.setData({
+            film: res.data.data,
+            loadingHidden: true
+          })
+        } else {
+
+        }
+        
       },
       error: function () {
         console.log("出错了")
       }
     })
   },
-  selected: function (e) {
+  selected: function (e) {//未点评
     this.setData({
       selected1: false,
       selected: true,
@@ -50,18 +54,23 @@ Page({
     })
     var that = this;
     wx.request({
-      method: 'Get',
-      url: 'https://message.sharetimes.cn/api/seven/none',
+      method: 'POST',
+      url: 'https://message.sharetimes.cn/api/seven/teacher',
       header: {//请求头
         'content-type': 'application/x-www-form-urlencoded'
       },
+      data:{
+        type:2
+      },
       success: function (res) {
-        // console.log(res);
-        that.setData({
-          film: res.data,
-          loadingHidden: true
-        })
-        console.log(that.data.film)
+        if (res.data.code == 'ok') {
+          that.setData({
+            film: res.data.data,
+            loadingHidden: true
+          })
+        } else {
+
+        }
       },
       error: function () {
         console.log("出错了")
@@ -76,18 +85,25 @@ Page({
       loadingHidden: false
     })
     wx.request({
-      method:'Get',
-      url: 'https://message.sharetimes.cn/api/seven/evaluate',
+      method:'POST',
+      url: 'https://message.sharetimes.cn/api/seven/teacher',
       header: {//请求头
         'content-type': 'application/x-www-form-urlencoded'
       },
+      data:{
+        type:1
+      },
       success:function(res) {
-        console.log(res);
-        that.setData({
-          mov:res.data,
-          loadingHidden: true
-        })
-        console.log(that.data.mov)
+        console.log(res)
+        if(res.data.code == 'ok') {
+          that.setData({
+            mov: res.data.data,
+            loadingHidden: true
+          })
+        } else {
+
+        }
+        
       }
     })
   },

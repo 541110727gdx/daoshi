@@ -62,7 +62,7 @@
     <image hidden='{{imageHidden}}' catchtap='showVideo' class="videoImage" src='{{videoImage}}'></image>
     <view hidden='{{videoHidden}}' class='videoView'>
       <view class="closeVIdeo" catchtap='closeVideo'></view>
-      <video src='{{videoUrl}}'></video>
+      <video src='{{videoUrl}}' custom-cache="{{false}}"></video>
       <button catchtap='delVideo'>删除该视频重新上传</button>
     </view>
     <view class="add-w" catchtap='showZz' hidden='{{wHidden}}'></view>

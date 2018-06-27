@@ -21,13 +21,13 @@
   </view>
 </view>
 <!--点评视频  -->
-<view class="title-dian" hidden='{{stuHidden}}'>
+<view class="title-dian" hidden='{{teaHidden}}'>
   导师寄语
 </view>
 <block wx:for-items="{{teaArr}}" wx:for-item="tea">
-  <video poster='{{tea.video_img}}' hidden='{{stuHidden}}' src="{{tea.video_url}}"></video>
-  <view class="con-wu"  hidden='{{stuHidden}}'>
-    <view class="start-ping"  hidden='{{stuHidden}}'>
+  <video poster='{{tea.video_img}}' hidden='{{teaHidden}}' src="{{tea.video_url}}"></video>
+  <view class="con-wu"  hidden='{{teaHidden}}'>
+    <view class="start-ping"  hidden='{{teaHidden}}'>
       <text>导师评分</text>
        <view class="start"> 
         <icon class="{{msg.standard >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>

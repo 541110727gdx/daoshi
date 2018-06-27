@@ -37,7 +37,7 @@
   导师寄语
 </view>
 <block wx:for-items="{{teaArr}}" wx:for-item="tea">
-  <video poster='{{tea.video_img}}' hidden='{{stuHidden}}' src="{{tea.video_url}}"></video>
+  <video custom-cache="{{false}}" poster='{{tea.video_img}}' hidden='{{stuHidden}}' src="{{tea.video_url}}"></video>
   <view class="con-wu"  hidden='{{stuHidden}}'>
     <view class="start-ping"  hidden='{{stuHidden}}'>
       <text>导师评分</text>

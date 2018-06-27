@@ -6,10 +6,10 @@
   </view>  
   <view class="{{selected?'about':'hidden'}}">
       <scroll-view style="min-height: 1200rpx" scroll-y="true" class="container film-list" bindscroll="">
-        <block wx:for-items="{{film}}" wx:for-item="film" wx:for-index="index">
-          <view class="qi-num">{{film[1]}}期</view>
-            <block wx:for-items="{{film[2]}}" wx:for-item="msg" >
-              <view class="film-item" bindtap="goDetail" data-uid="{{msg.id}}"  data-vid="{{msg.video[0].id}}" data-title="{{msg.title}}">
+        <block wx:for-items="{{film}}" wx:for-item="film" wx:for-index="index" wx:key='film'>
+          <view class="qi-num">{{film.created_at}}期</view>
+            <block wx:for-items="{{film.video}}" wx:for-item="msg" wx:key='msg'>
+              <view class="film-item" bindtap="goDetail" data-uid="{{msg.user_id}}"  data-vid="{{msg.id}}" data-title="{{msg.title}}">
                 <view class="{{msg.type == 1? 'film-yin':'film-image'}}">
                   <image class='shiImg' src="{{msg.video_img}}" hidden="{{msg.type == 1? true:false}}"></image>
                   <image src="../../img/yin.png" hidden="{{msg.type == 1? false:true}}"></image> 
@@ -18,7 +18,7 @@
                 </view>
                 <view class="film-info">
                   <view>
-                  <view class="film-name">{{msg.username}}</view>
+                  <view class="film-name">{{msg.title}}</view>
                 <view class="film-num">￥{{msg.money}}</view>
                   </view>
                 </view> 
@@ -29,10 +29,10 @@
     </view>
     <view class="{{selected1?'about':'hidden'}}">
       <scroll-view style="min-height: 1200rpx" scroll-y="true" class="container film-list" bindscroll="">
-        <block wx:for-items="{{mov}}" wx:for-item="mov" wx:for-index="index2">
-          <view class="qi-num">{{mov[1]}}期</view>
-            <block wx:for-items="{{mov[2]}}" wx:for-item="m" >
-              <view class="film-item" bindtap="goYi" data-uid="{{m.id}}"  data-vid="{{m.video[0].id}}" data-title="{{m.title}}">
+        <block wx:for-items="{{mov}}" wx:for-item="mov" wx:for-index="index2" wx:key='mov'>
+          <view class="qi-num">{{mov.created_at}}期</view>
+            <block wx:for-items="{{mov.video}}" wx:for-item="m" wx:key='m'>
+              <view class="film-item" bindtap="goYi" data-uid="{{m.user_id}}"  data-vid="{{m.id}}" data-title="{{m.title}}">
                 <view class="{{m.type == 1? 'film-yin':'film-image'}}">
                   <image class='shiImg' src="{{m.video_img}}" hidden="{{m.type == 1? true:false}}"></image>
                   <image src="../../img/yin.png" hidden="{{m.type == 1? false:true}}"></image> 
@@ -41,7 +41,7 @@
                 </view>
                 <view class="film-info">
                   <view>
-                  <view class="film-name">{{m.username}}</view>
+                  <view class="film-name">{{m.title}}</view>
                 <view class="film-num">￥{{m.money}}</view>
                   </view>
                 </view> 

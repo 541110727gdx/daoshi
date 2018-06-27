@@ -33,7 +33,7 @@
     </view>
     <view class="film-info">
       <view>
-        <view class="film-name">{{item.upload_name}}</view>
+        <view class="film-name">{{item.title}}</view>
       </view>
       <view>
         <!-- <text class="ifyin" wx:if="{{item.type == 1}}">音频</text>

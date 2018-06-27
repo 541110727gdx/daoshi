@@ -89,6 +89,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    console.log(wx.getStorageSync('teaNum'))
     // console.log(options);
     that.setData({
       vid: options.vid
@@ -105,7 +106,7 @@ Page({
         openId: wx.getStorageSync('openId')
       },
       success: function (res) {
-        // console.log(res);
+        console.log(res);
         that.setData({
           msg: res.data
         })
@@ -122,17 +123,16 @@ Page({
         evaluate: options.vid
       },
       success: function (res) {
-        // console.log(res)
+        console.log(res)
         that.setData({
           teaArr: res.data
         })
-        // console.log(that.data)
+        console.log(that.data.teaArr)
       }
     })
     //判断是否为导师
     if (wx.getStorageSync('teaNum')) {
       that.setData({
-        stuHidden: true,
         teaHidden: false
       })
     } else {
