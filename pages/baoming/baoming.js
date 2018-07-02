@@ -92,16 +92,18 @@ Page({
     userDes:'',
     videoTitle:'',
     ifShi:'',
-    payments_id:''
+    payments_id:'',
+    ifFree:''
+
   },
   onLoad: function (options) {
+    console.log(options)
     var that = this;
     that.setData({
       ifShi:options.ifShi,
-      payments_id:options.dingId
+      payments_id:options.dingId,
+      ifFree:options.ifFree
     })
-    console.log(options)
-    console.log(that.data)
   },
   // 姓名
   userName:function(e) {
@@ -304,7 +306,7 @@ Page({
   submit:function() {
     var that = this;
     console.log(that.data)
-    if (that.data.userName && that.data.userSex && that.data.userAge && that.data.index && that.data.userOcc && that.data.userIdea && that.data.userDes && that.data.imageURL) {
+    if (that.data.userName && that.data.userSex && that.data.userAge && that.data.index && that.data.userOcc && that.data.userIdea && that.data.userDes && that.data.imageURL) {//视频
       that.setData({
         loadingHidden:false
       })
@@ -334,16 +336,37 @@ Page({
         success: function (res) {
           console.log(res)
           if (res.data == true) {
-            that.setData({
-              loadingHidden: true
-            })
-            wx.redirectTo({
-              url: "../success/success"
-            })
+            if (that.data.ifFree) {//免费名额
+              wx.request({
+                url: 'https://message.sharetimes.cn/api/square/paymentsid',
+                header: {//请求头
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                  type: 2
+                },
+                success: function (res) {
+                  that.setData({
+                    loadingHidden: true
+                  })
+                  wx.redirectTo({
+                    url: "../success/success"
+                  })
+                }
+              })
+            } else {
+              that.setData({
+                loadingHidden: true
+              })
+              wx.redirectTo({
+                url: "../success/success"
+              })
+            }
+            
           }
         }
       })
-    } else if (that.data.userName && that.data.userSex && that.data.userAge && that.data.index && that.data.userOcc && that.data.userIdea && that.data.userDes && that.data.yinUrl2 && that.data.videoTitle){
+    } else if (that.data.userName && that.data.userSex && that.data.userAge && that.data.index && that.data.userOcc && that.data.userIdea && that.data.userDes && that.data.yinUrl2 && that.data.videoTitle){//音频
       console.log(that.data)
       that.setData({
         loadingHidden: false
@@ -374,12 +397,32 @@ Page({
         },
         success: function (res) {
           if (res.data == true) {
-            that.setData({
-              loadingHidden: true
-            })
-            wx.redirectTo({
-              url: "../success/success"
-            })
+            if (that.data.ifFree) {//免费名额
+              wx.request({
+                url: 'https://message.sharetimes.cn/api/square/paymentsid',
+                header: {//请求头
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                  type: 2
+                },
+                success: function (res) {
+                  that.setData({
+                    loadingHidden: true
+                  })
+                  wx.redirectTo({
+                    url: "../success/success"
+                  })
+                }
+              })
+            } else {
+              that.setData({
+                loadingHidden: true
+              })
+              wx.redirectTo({
+                url: "../success/success"
+              })
+            }
           }
         }
       })

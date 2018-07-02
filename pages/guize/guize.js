@@ -30,7 +30,8 @@ Page({
     selected: true,
     selected1: false,
     ifShi:'1',
-    listData: []
+    listData: [],
+
   },
   selected: function (e) {
     this.setData({
@@ -44,9 +45,9 @@ Page({
       selected1: true
     })
   },
-  gogo:function() {
+  goBao:function() {
     wx.navigateTo({
-      url: '../baoming/baoming'
+      url: '../baoming/baoming?ifFree=true&ifShi='+this.data.ifShi
     })
   },
   onLoad:function() {
@@ -58,23 +59,46 @@ Page({
       },
       success:function(res) {
         console.log(res);
-        if (res.data.pay_amount == '名额已用完，请进入竞价报名') {
+        if(res.data.code == 100) {//免费名额
+          wx.setStorageSync('dateId', res.data.data.id);
           that.setData({
             payHidden: true,
             pay2Hidden: false,
             loadingHidden:true,
             moneyList: res.data,
           })
-        } else {
-          that.time(res.data.activity_begin, res.data.current)
-          times.date(res.data.activity_end, 'Y/M/D h:m', that),
-          wx.setStorageSync('dateId', res.data.id);
+        } else if (res.data.code == 200){//免费名额用完
+          wx.setStorageSync('dateId', res.data.data.id);
           that.setData({
-            dateId: res.data.id,
+            loadingHidden: true,
             moneyList: res.data,
-            loadingHidden:true
+          })
+        } else {//活动名额已满
+          wx.setStorageSync('dateId', res.data.data.id);
+          that.setData({
+            payHidden: true,
+            pay2Hidden: false,
+            loadingHidden: true,
+            moneyList: res.data,
           })
         }
+        // if (res.data.pay_amount == '名额已用完，请进入竞价报名') {
+        //   that.setData({
+        //     payHidden: true,
+        //     pay2Hidden: false,
+        //     loadingHidden:true,
+        //     moneyList: res.data,
+        //   })
+        // } else {
+        //   that.time(res.data.activity_begin, res.data.current)
+        //   times.date(res.data.activity_end, 'Y/M/D h:m', that),
+        //   wx.setStorageSync('dateId', res.data.id);
+        //   that.setData({
+        //     dateId: res.data.id,
+        //     moneyList: res.data,
+        //     loadingHidden:true
+        //   })
+        // }
         
       }
     })
@@ -160,25 +184,7 @@ Page({
             'signType': 'MD5',
             'paySign': that.data.paySign,
             'success': function (res) {
-              
-              wx.request({
-                url: 'https://message.sharetimes.cn/api/square/paymentsid',
-                header: {//请求头
-                  'content-type': 'application/x-www-form-urlencoded'
-                },
-                success:function(res) {
-                  console.log(res);
-                  that.setData({
-                    loadingHidden: false,
-                    dingId:res.data
-                  })
-                  var ifShi = that.data.ifShi;
-                  wx.redirectTo({
-                    url: '../baoming/baoming?ifShi=' + ifShi + '&dingId=' + that.data.dingId
-                  })
-                }
-              })
-              
+            
             },
             'fail': function (res) {
               // console.log('timeStamp:'+that.data.timestamp); 
@@ -222,13 +228,25 @@ Page({
             'signType': 'MD5',
             'paySign': that.data.paySign,
             'success': function (res) {
-              console.log(res);
-              that.setData({
-                loadingHidden: false
-              })
-              var ifShi = that.data.ifShi;
-              wx.redirectTo({
-                url: '../baoming/baoming?ifShi=' + ifShi
+              wx.request({
+                url: 'https://message.sharetimes.cn/api/square/paymentsid',
+                header: {//请求头
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                  type: 1
+                },
+                success: function (res) {
+                  console.log(res);
+                  that.setData({
+                    loadingHidden: false,
+                    dingId: res.data
+                  })
+                  var ifShi = that.data.ifShi;
+                  wx.redirectTo({
+                    url: '../baoming/baoming?ifShi=' + ifShi + '&dingId=' + that.data.dingId
+                  })
+                }
               })
             },
             'fail': function (res) {
@@ -281,9 +299,25 @@ Page({
                   'signType': 'MD5',
                   'paySign': that.data.paySign,
                   'success': function (res) {
-                    console.log(res);
-                    wx.redirectTo({
-                      url: '../baoming/baoming'
+                    wx.request({
+                      url: 'https://message.sharetimes.cn/api/square/paymentsid',
+                      header: {//请求头
+                        'content-type': 'application/x-www-form-urlencoded'
+                      },
+                      data: {
+                        type: 1
+                      },
+                      success: function (res) {
+                        console.log(res);
+                        that.setData({
+                          loadingHidden: false,
+                          dingId: res.data
+                        })
+                        var ifShi = that.data.ifShi;
+                        wx.redirectTo({
+                          url: '../baoming/baoming?ifShi=' + ifShi + '&dingId=' + that.data.dingId
+                        })
+                      }
                     })
                   },
                   'fail': function (res) {

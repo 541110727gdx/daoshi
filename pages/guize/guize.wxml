@@ -29,14 +29,14 @@
           </view>
         </view>
       </view>
-      <view class="money">￥
-        <text>0.01</text>
+      <view class="money" hidden='{{payHidden}}'>￥
+        <text>{{moneyList.data.pay_mount}}</text>
       </view>
       <view class="pay" catchtap="payMoney1" hidden='{{payHidden}}'>支付
-        <text>0.01</text>元
+        <text>{{moneyList.data.pay_mount}}</text>元
       </view>
-      <view class="pay2" hidden='{{pay2Hidden}}'>
-        <text>{{moneyList.pay_amount}}</text>
+      <view class="pay2" hidden='{{pay2Hidden}}' bindtap='goBao'>
+        <text>{{moneyList.msg}}</text>
       </view>
     </view>
     <view class="{{selected1?'about':'hidden'}}">

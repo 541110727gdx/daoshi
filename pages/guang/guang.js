@@ -191,6 +191,9 @@ Page({
             loadingHidden: true
           })
         } else if(res.data.code == 'null'){
+          that.setData({
+            loadingHidden: true
+          })
           wx.showToast({
             title: '没有相关信息',
             image: '../../img/error.png',
