@@ -15,6 +15,17 @@ Page({
     ifDing:false,
     qing:true
 },
+  join: function () {
+    if (wx.getStorageSync('loginKey')) {
+      wx.navigateTo({
+        url: '../guize/guize'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+  },
   goHome:function() {
     wx.redirectTo({
       url: '../home/home'
@@ -36,6 +47,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    console.log(wx.getStorageSync('openId'))
     wx.request({
       url: 'https://message.sharetimes.cn/api/square/myhome',
       header: {//请求头
@@ -113,5 +125,23 @@ Page({
     wx.navigateTo({
       url: "../detail/detail?uid=" + filmid + '&vid=' + videoid
     })
+  },
+  tuichu:function() {
+    wx.showModal({
+      title: '提示',
+      content: '确定退出登录吗',
+      success: function (res) {
+        if (res.confirm) {
+          wx.removeStorageSync('loginKey')
+          console.log(wx.getStorageSync('openId'))
+          wx.reLaunch({
+            url: '../login/login'
+          })
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+    
   }
 })

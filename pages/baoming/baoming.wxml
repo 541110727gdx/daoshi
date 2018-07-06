@@ -79,10 +79,9 @@
 <!--选择视频音频遮罩层  -->
 <view class="zz {{showView? 'zz-show' : 'zz-hide'}}">
   <view class="zz-btn">
-     <view catchtap='showYin'></view> 
-    <!-- <view></view> -->
-    <view catchtap='chooseVideo'></view>
-    <view catchtap='hideZz'></view>
+    <!-- <view class='showyin' catchtap='showYin'></view>  -->
+    <view class='choosevideo' catchtap='chooseVideo'></view>
+    <view class='hidezz' catchtap='hideZz'></view>
   </view>
 </view>
 <!--音频遮罩层  -->

@@ -47,6 +47,17 @@ Page({
       }
     })
   },
+  join: function () {
+    if (wx.getStorageSync('loginKey')) {
+      wx.navigateTo({
+        url: '../guize/guize'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+  },
   goMy: function () {
     if (wx.getStorageSync('loginKey')) {
       wx.navigateTo({

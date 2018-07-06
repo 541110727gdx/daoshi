@@ -85,11 +85,10 @@
             </view>
           </view>
         </block>
-          
-          
         </view>
       </view>
   </view> 
+  <view class='tuichu' bindtap='tuichu'>退出登录</view>
 </scroll-view>
 <cover-view class="tab">
     <cover-view class="tab-view1" bindtap='goHome'>
@@ -109,7 +108,7 @@
   还没有内容请<text>去报名</text>
 </view>
 <loading hidden="{{loadingHidden}}">请稍后...</loading> 
-
+<image class='btn' src='../../img/btn.png' bindtap='join'></image>
 
 
 

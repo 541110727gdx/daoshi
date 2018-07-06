@@ -16,7 +16,7 @@
       <view>3、上交作品需要包括报名表、分镜头、作品源文件、时长不少于1分钟的视频成片</view>
       <view>4、作品禁止抄袭盗用，如果使用素材、须用文档注明引用地址。</view>
       <view>5、请认真填写详细资料方便导师对您的音乐方向点评不少于60秒的点评内容</view>
-      <view class="huifu">
+      <!-- <view class="huifu">
         <view class="huifu-title">
           导师回复：
         </view>
@@ -28,7 +28,7 @@
             音频回复
           </view>
         </view>
-      </view>
+      </view> -->
       <view class="money" hidden='{{payHidden}}'>￥
         <text>{{moneyList.data.pay_mount}}</text>
       </view>

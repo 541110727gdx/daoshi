@@ -192,19 +192,19 @@ picker{
   align-items: center;
   justify-content: space-around;
 }
-.zz-btn view:nth-child(1) {
+.zz-btn .showyin {
   width: 150rpx;
   height: 190rpx;
   background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/FfbMZxzDRa6wwZO1ndHrGVJc0K4nlaaP68kMbxD5.6g!/m/dB4BAAAAAAAAnull&bo=ogDMAAAAAAADB0w!&rf=photolist&t=5) center center no-repeat;
   background-size: 100% 100%;
 }
-.zz-btn view:nth-child(2) {
+.zz-btn .choosevideo {
   width: 150rpx;
   height: 190rpx;
   background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/VP8EUwxNB64sDI0pMKIvB1zWI38h8zsYKQpJfbzMAos!/m/dAEBAAAAAAAAnull&bo=ogDMAAAAAAADB0w!&rf=photolist&t=5) center center no-repeat;
   background-size: 100% 100%;
 }
-.zz-btn view:nth-child(3) {
+.zz-btn .hidezz {
   width: 42rpx;
   height: 42rpx;
   position: absolute;

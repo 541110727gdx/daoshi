@@ -107,16 +107,18 @@ Page({
   },
   // 姓名
   userName:function(e) {
-    let reg = /^[\u4E00-\u9FA5]{2,4}$/;
-    if (!reg.test(e.detail.value)) {
+    if (e.detail.value.length == 0) {
       wx.showToast({
         title: '请输入正确姓名',
         image: '../../img/error.png',
         duration: 2000
       })
-      this.setData({
-        name: ''
-      });
+    } else if (e.detail.value.length == 20){
+      wx.showToast({
+        title: '请输入正确姓名',
+        image: '../../img/error.png',
+        duration: 2000
+      })
     } else {
       this.setData({
         userName: e.detail.value

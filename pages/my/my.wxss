@@ -1,3 +1,10 @@
+.btn{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 20rpx;
+}
 page{
   background: #f5f5f5;
 }
@@ -238,15 +245,15 @@ image{
 }
 .icon{
   background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/JnujFnBqCw72zbBC*A1MVx19RK04ksHU7RvqWDYPQ.M!/m/dPcAAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
-  width: 52rpx;
-  height: 32rpx;
+  width: 34rpx;
+  height: 26rpx;
   background-size: 100% 100%;
   margin-right:2px; 
 }
 .cur{
   background: url(http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/zoqZpDmXvhbCfi5uQ0Z8Ysyn.f4Bq3WMLfZpEJutQxs!/m/dLMAAAAAAAAAnull&bo=KAAoAAAAAAADByI!&rf=photolist&t=5) center center no-repeat;
-  width: 52rpx;
-  height: 32rpx;
+  width: 34rpx;
+  height: 26rpx;
   background-size: 100% 100%;
 }
 .qing{
@@ -258,4 +265,14 @@ image{
 }
 .qing text{
   color: #72c365;
+}
+.tuichu{
+  width: 540rpx;
+  height: 72rpx;
+  background: #c8c8c8;
+  text-align: center;
+  line-height: 72rpx;
+  color: #fff;
+  margin: 40rpx auto 20rpx;
+  border-radius: 5px;
 }

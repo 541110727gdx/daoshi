@@ -3,6 +3,7 @@
 var app = getApp()
 Page({
   data: {
+    banner:[],
     startHidden:false,
     moneyHidden:true,
     loadingHidden:true,
@@ -44,6 +45,18 @@ Page({
       },
       error:function() {
         console.log("出错了")
+      }
+    })
+    wx.request({
+      url: 'https://message.sharetimes.cn/api/square/bannerlist',
+      header: {//请求头
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success:function(res) {
+        console.log(res)
+        that.setData({
+          banner:res.data.data
+        })
       }
     })
     // wx.request({

@@ -47,9 +47,9 @@ Page({
       success: function (res) {
         console.log(res);
         if (res.data[1] == 'true') {
-          var timestamp3 = Date.parse(new Date());
-          var ext2 = timestamp3 + 86400000;
-          wx.setStorageSync('index_ext2', ext2);
+          // var timestamp3 = Date.parse(new Date());
+          // var ext2 = timestamp3 + 86400000;
+          // wx.setStorageSync('index_ext2', ext2);
           wx.setStorageSync('teaNum', that.data.phone);
           wx.setStorageSync('evaId', res.data[0])
           wx.navigateTo({
@@ -74,9 +74,9 @@ Page({
                 // console.log(wx.getStorageSync('openId'))
                 console.log(res)
                 if (res.data == '登录成功') {
-                  var timestamp = Date.parse(new Date());
-                  var ext = timestamp + 86400000;
-                  wx.setStorageSync('index_ext', ext);
+                  // var timestamp = Date.parse(new Date());
+                  // var ext = timestamp + 86400000;
+                  // wx.setStorageSync('index_ext', ext);
                   wx.setStorageSync('loginKey', that.data.phone);
                   that.setData({
                     loadingHidden:false
@@ -129,22 +129,23 @@ Page({
   },
   onLoad: function () {
     // wx.clearStorage();
-    var timestamp2 = Date.parse(new Date());
-    var loginKey = wx.getStorageSync('loginKey');
-    var teaNum = wx.getStorageSync('teaNum');
-    var ext = wx.getStorageSync('index_ext');
-    var ext2 = wx.getStorageSync('index_ext2');
-    if (loginKey && ext > timestamp2) {//学员缓存过期时间
-      wx.redirectTo({
-        url: '../home/home'
-      })
-    } else if (teaNum && ext2 > timestamp2) {//导师缓存过期时间
-      wx.redirectTo({
-        url: '../homeTea/homeTea'
-      })
-    } else {
-      wx.clearStorage();
-    }
+    // var timestamp2 = Date.parse(new Date());
+    // var loginKey = wx.getStorageSync('loginKey');
+    // var teaNum = wx.getStorageSync('teaNum');
+    // var ext = wx.getStorageSync('index_ext');
+    // var ext2 = wx.getStorageSync('index_ext2');
+    // if (loginKey && ext > timestamp2) {//学员缓存过期时间
+    //   wx.redirectTo({
+    //     url: '../home/home'
+    //   })
+    // } else if (teaNum && ext2 > timestamp2) {//导师缓存过期时间
+    //   wx.redirectTo({
+    //     url: '../homeTea/homeTea'
+    //   })
+    // } else {
+    //   console.log(121212)
+    //   wx.clearStorage();
+    // }
     
     wx.setStorageSync("userImg", 'http://b247.photo.store.qq.com/psb?/V10RQdNV3tmS94/J6ghmILeNG4*mQvY*K*scbqO6FcD6ack6VMg777yK6o!/m/dGoBAAAAAAAAnull&bo=yADIAAAAAAADByI!&rf=photolist&t=5')
     // var that = this

@@ -62,3 +62,4 @@
     </view>
   </view>
  <loading hidden="{{loadingHidden}}">请稍后...</loading> 
+ <image class='btn' src='../../img/btn.png' bindtap='join'></image>

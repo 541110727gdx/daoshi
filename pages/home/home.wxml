@@ -1,14 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  <image class="banner" src="../../img/banner.jpg" bindtap='join'></image>
-  
-  
-  <!-- <block wx:if="{{showLoading}}">
-    <view class="page-loading">
-      <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
-    </view>
-  </block> -->
-  <!-- <block wx:if="{{showLoading}}"> -->
+  <!-- <image class="banner" src="../../img/banner.jpg" bindtap='join'></image> -->
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color='#4aa6fc' indicator-color='#dcdcdc'>
+   <block wx:for="{{banner}}" wx:key="items"> 
+    <swiper-item>
+      <image bindtap='goDetail' class="slide-image" src="{{item.banner_img}}" data-vid='{{item.video_id}}'/>
+     </swiper-item> 
+   </block> 
+</swiper>
     <scroll-view style="height: 800rpx" scroll-y="true" class="container film-list" bindscroll="">
     <!-- <view class="hua">
       <view class="qi-num">导师花絮</view>
@@ -81,4 +80,5 @@
     </view>
   </view>
 </view>
+<image class='btn' src='../../img/btn.png' bindtap='join'></image>
 <loading hidden="{{loadingHidden}}">请稍后...</loading>

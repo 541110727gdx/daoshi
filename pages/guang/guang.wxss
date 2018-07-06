@@ -1,4 +1,11 @@
 /* pages/guang/guang.wxss */
+.btn{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 20rpx;
+}
 .tab{
   width: 100%;
   height: 44px;

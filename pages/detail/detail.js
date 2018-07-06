@@ -56,22 +56,20 @@ Page({
     })
     wx.request({
       method:'POST',
-      url: 'https://message.sharetimes.cn/api/seven/index',
+      url: 'https://message.sharetimes.cn/api/square/videocontent',
       header: {//请求头
         'content-type': 'application/x-www-form-urlencoded'
       },
       data:{
-        uid:options.uid,
-        vid:options.vid,
-        openId: wx.getStorageSync('openId')
+        video_id:options.vid
       },
       success:function(res) {
         console.log(res);
         that.setData({
-          msg:res.data,
+          msg:res.data.data[0],
           loadingHidden:true
         })
-        
+        console.log(that.data.msg)
       }
     })
     wx.request({
@@ -84,7 +82,7 @@ Page({
         evaluate:options.vid
       },
       success:function(res) {
-        console.log(res)
+        // console.log(res)
         if(res.data.length == 0) {
           that.setData({
             teaArr: res.data,
