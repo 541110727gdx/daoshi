@@ -128,6 +128,11 @@ Page({
     })
   },
   onLoad: function () {
+    if (wx.getStorageSync('loginKey')) {
+      wx.redirectTo({
+        url: '../home/home'
+      })
+    }
     // wx.clearStorage();
     // var timestamp2 = Date.parse(new Date());
     // var loginKey = wx.getStorageSync('loginKey');

@@ -60,11 +60,11 @@ Page({
   },
   goMy: function () {
     if (wx.getStorageSync('loginKey')) {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../my/my'
       })
     } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../login/login'
       })
     }
